@@ -71,12 +71,8 @@ function App() {
         return "Sorry, there was an issue with the chatbot.";
     }
 };
-// Handle Enter key press
-    const handleKeyPress = (e) => {
-        if (e.key === "Enter") {
-            sendMessage();
-        }
-    };
+
+  
 
 
 
