@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import 'C:/Users/Ben/Documents/innovation-project/src/Page3.css'; // Import unique CSS for Page3
+import '../Page3.css'; // Import unique CSS for Page3
  // Make sure you have these pages imported
 import RSandMQuiz from './RSandMQuiz';
 import VHaMQuiz from "./VHaMQuiz";
