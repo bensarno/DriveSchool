@@ -19,8 +19,9 @@
 .circle1, .circle2, .circle3 {
     width: 50px;
     height: 50px;
-    background-color: white;
     border-radius: 50%;
+    border-width:3px;
+    border-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +36,7 @@
 }
 
 .circle2 {
-    background-image: url('robot.jpg');
+    background-image: url('HomeIcon.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -99,6 +100,7 @@ input {
     font-size: 16px;
     text-align: left; /* Text starts from the left */
     margin-right: 60px; /* Give enough space for the send button */
+    margin-left: 10px;
 }
 
 /* Send Button */

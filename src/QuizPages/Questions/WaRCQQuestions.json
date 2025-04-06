@@ -1,0 +1,222 @@
+[
+	{
+		"question": "What should you do if you're driving in heavy rain and the road becomes flooded?",
+		"options": [
+			"Continue driving at a reduced speed",
+			"Pull over to the side of the road and wait for the rain to stop",
+			"Drive through the flood slowly to avoid losing control",
+			"Avoid the flooded area by finding an alternative route"
+		],
+		"answer": "Avoid the flooded area by finding an alternative route"
+	},
+	{
+		"question": "What should you do if you see fog while driving?",
+		"options": [
+			"Drive at the normal speed limit",
+			"Turn on your headlights and reduce speed",
+			"Speed up to pass through it quickly",
+			"Turn off your headlights to avoid glare"
+		],
+		"answer": "Turn on your headlights and reduce speed"
+	},
+	{
+		"question": "What is the main danger when driving in icy conditions?",
+		"options": [
+			"The possibility of skidding",
+			"Increased visibility",
+			"Shorter stopping distances",
+			"Heat exhaustion"
+		],
+		"answer": "The possibility of skidding"
+	},
+	{
+		"question": "How should you drive when there's a strong crosswind?",
+		"options": [
+			"Drive at a constant speed and avoid sudden steering movements",
+			"Slow down significantly and stay in the center of the lane",
+			"Turn on your hazard lights to warn other drivers",
+			"Increase your speed to reduce the impact of the wind"
+		],
+		"answer": "Drive at a constant speed and avoid sudden steering movements"
+	},
+	{
+		"question": "What should you do if you're driving on a wet road and your car starts to skid?",
+		"options": [
+			"Brake firmly to stop the car",
+			"Steer into the skid and ease off the accelerator",
+			"Steer sharply in the opposite direction",
+			"Accelerate to regain control"
+		],
+		"answer": "Steer into the skid and ease off the accelerator"
+	},
+	{
+		"question": "When driving in snow, how should you brake?",
+		"options": [
+			"Brake sharply and quickly",
+			"Apply brakes gently to avoid skidding",
+			"Use your handbrake only",
+			"Keep your foot off the brake pedal"
+		],
+		"answer": "Apply brakes gently to avoid skidding"
+	},
+	{
+		"question": "What should you do when approaching a slippery surface sign?",
+		"options": [
+			"Maintain your current speed and proceed with caution",
+			"Slow down and increase the distance from the car in front",
+			"Accelerate to prevent sliding",
+			"Turn off the headlights to improve visibility"
+		],
+		"answer": "Slow down and increase the distance from the car in front"
+	},
+	{
+		"question": "What is the most important action to take when driving in foggy conditions?",
+		"options": [
+			"Use high beams for better visibility",
+			"Slow down and increase your stopping distance",
+			"Drive at the speed limit to maintain momentum",
+			"Keep your hazard lights on at all times"
+		],
+		"answer": "Slow down and increase your stopping distance"
+	},
+	{
+		"question": "How should you handle your steering wheel if you start to hydroplane?",
+		"options": [
+			"Turn the wheel sharply to one side",
+			"Firmly grip the wheel and steer in the direction you want to go",
+			"Let go of the steering wheel to regain control",
+			"Turn the wheel in the opposite direction of the skid"
+		],
+		"answer": "Firmly grip the wheel and steer in the direction you want to go"
+	},
+	{
+		"question": "What should you do when the road is covered with snow and ice?",
+		"options": [
+			"Use cruise control to maintain a steady speed",
+			"Drive in the center of the road to avoid the icy edges",
+			"Reduce speed, increase the distance from the car ahead, and use lower gears",
+			"Keep your windows closed to prevent frost buildup"
+		],
+		"answer": "Reduce speed, increase the distance from the car ahead, and use lower gears"
+	},
+	{
+		"question": "When driving on a wet road, what should you do to avoid aquaplaning?",
+		"options": [
+			"Increase speed to cut through the water",
+			"Ensure your tires are properly inflated and maintain a safe speed",
+			"Drive with your headlights off",
+			"Brake hard to avoid skidding"
+		],
+		"answer": "Ensure your tires are properly inflated and maintain a safe speed"
+	},
+	{
+		"question": "If you see a snowplow on the road, what should you do?",
+		"options": [
+			"Pass the snowplow quickly to avoid blocking traffic",
+			"Slow down and maintain a safe distance behind it",
+			"Speed up to avoid getting stuck behind it",
+			"Sound your horn to alert the driver"
+		],
+		"answer": "Slow down and maintain a safe distance behind it"
+	},
+	{
+		"question": "What should you do if your tires lose traction in snow or ice?",
+		"options": [
+			"Brake hard and steer sharply to regain control",
+			"Ease off the accelerator and steer gently into the skid",
+			"Turn the wheel quickly to the left and right to regain control",
+			"Accelerate to push through the slippery surface"
+		],
+		"answer": "Ease off the accelerator and steer gently into the skid"
+	},
+	{
+		"question": "When driving in the rain, how far should you increase your following distance?",
+		"options": [
+			"Double the normal following distance",
+			"Half the normal following distance",
+			"Follow the car closely to avoid water spray",
+			"It doesn't need to be changed"
+		],
+		"answer": "Double the normal following distance"
+	},
+	{
+		"question": "What is the best way to handle a vehicle in icy conditions?",
+		"options": [
+			"Use the handbrake to prevent skidding",
+			"Steer smoothly and avoid harsh braking",
+			"Turn off your headlights to prevent glare",
+			"Drive as fast as possible to prevent the ice from affecting you"
+		],
+		"answer": "Steer smoothly and avoid harsh braking"
+	},
+	{
+		"question": "What should you do if you approach a flooded road?",
+		"options": [
+			"Drive through the water slowly to avoid stalling",
+			"Stop and turn around if the water is too deep",
+			"Speed through the flood to clear the water quickly",
+			"Try to float the car across the water"
+		],
+		"answer": "Stop and turn around if the water is too deep"
+	},
+	{
+		"question": "What should you do if you see a weather warning for high winds while driving?",
+		"options": [
+			"Increase speed to avoid being caught in the wind",
+			"Slow down, keep both hands on the wheel, and stay alert for sudden gusts",
+			"Turn off the headlights to improve visibility",
+			"Seek shelter immediately"
+		],
+		"answer": "Slow down, keep both hands on the wheel, and stay alert for sudden gusts"
+	},
+	{
+		"question": "When driving through a puddle, what is the best course of action?",
+		"options": [
+			"Drive slowly to avoid splashing pedestrians",
+			"Speed up to prevent the water from affecting the car",
+			"Brake firmly before and after the puddle to avoid hydroplaning",
+			"Drive quickly to avoid getting stuck"
+		],
+		"answer": "Drive slowly to avoid splashing pedestrians"
+	},
+	{
+		"question": "What should you do if your headlights mist up in the rain?",
+		"options": [
+			"Turn on your hazard lights and stop immediately",
+			"Keep the headlights on and drive at a reduced speed",
+			"Turn off your headlights to prevent damage",
+			"Turn on your rear fog lights for better visibility"
+		],
+		"answer": "Keep the headlights on and drive at a reduced speed"
+	},
+	{
+		"question": "How should you adjust your driving when there is a lot of ice on the road?",
+		"options": [
+			"Accelerate quickly to prevent the ice from affecting the car",
+			"Slow down, maintain a steady speed, and avoid sharp turns",
+			"Drive at the normal speed limit",
+			"Apply the brakes constantly to maintain control"
+		],
+		"answer": "Slow down, maintain a steady speed, and avoid sharp turns"
+	},
+	{
+		"question": "What is the best way to maintain visibility in heavy rain?",
+		"options": [
+			"Turn off your headlights to avoid glare",
+			"Use your wipers and headlights and slow down",
+			"Drive with the windows open for better air circulation",
+			"Use high beams to improve visibility"
+		],
+		"answer": "Use your wipers and headlights and slow down"
+	},
+	{
+		"question": "What should you do if the road is covered in ice and you're driving uphill?",
+		"options": [
+			"Increase your speed to maintain momentum",
+			"Slow down and use the lowest gear possible",
+			"Turn off your headlights to prevent glare",
+			"Stop and wait until the ice melts"
+		],
+		"answer": "Slow down and use the lowest gear possible"
+	}
+]

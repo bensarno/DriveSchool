@@ -1,0 +1,232 @@
+[
+    {
+        "question": "What is the primary purpose of road signs?",
+        "options": [
+            "To provide decoration for roads",
+            "To provide information and instructions to drivers",
+            "To make roads look more organized",
+            "To show the speed limit"
+        ],
+        "answer": "To provide information and instructions to drivers"
+    },
+    {
+        "question": "What does a red circular road sign indicate?",
+        "options": [
+            "Warning or caution",
+            "Prohibition or restriction",
+            "Mandatory action",
+            "Information"
+        ],
+        "answer": "Prohibition or restriction"
+    },
+    {
+        "question": "What does a green directional sign usually indicate?",
+        "options": [
+            "Speed limits",
+            "Directions to various routes",
+            "Warning about upcoming obstacles",
+            "Places to stop for rest"
+        ],
+        "answer": "Directions to various routes"
+    },
+    {
+        "question": "What does a yellow diamond-shaped sign usually indicate?",
+        "options": [
+            "Warning of potential hazards",
+            "Mandatory actions",
+            "Prohibited actions",
+            "Speed limits"
+        ],
+        "answer": "Warning of potential hazards"
+    },
+    {
+        "question": "What should you do when you see a stop sign?",
+        "options": [
+            "Continue driving at a slower speed",
+            "Stop completely and check for other vehicles",
+            "Slow down and proceed with caution",
+            "Turn around and go back"
+        ],
+        "answer": "Stop completely and check for other vehicles"
+    },
+    {
+        "question": "What does a blue circular sign indicate?",
+        "options": [
+            "Prohibition",
+            "Direction for vehicles",
+            "Mandatory action",
+            "Parking area"
+        ],
+        "answer": "Mandatory action"
+    },
+    {
+        "question": "What should you do when you see a warning triangle sign?",
+        "options": [
+            "Continue at your current speed",
+            "Reduce your speed and be prepared to stop",
+            "Stop immediately and reverse",
+            "Accelerate to clear the area"
+        ],
+        "answer": "Reduce your speed and be prepared to stop"
+    },
+    {
+        "question": "What color are road signs that indicate direction or distance?",
+        "options": [
+            "Blue",
+            "Yellow",
+            "Green",
+            "Red"
+        ],
+        "answer": "Green"
+    },
+    {
+        "question": "What should you do when you approach a zebra crossing with pedestrians waiting?",
+        "options": [
+            "Continue driving at the same speed",
+            "Stop and let pedestrians cross",
+            "Honk to alert pedestrians",
+            "Speed up to pass before they cross"
+        ],
+        "answer": "Stop and let pedestrians cross"
+    },
+    {
+        "question": "What does a double yellow line mean?",
+        "options": [
+            "You can park if necessary",
+            "No parking or stopping at any time",
+            "Parking is only allowed during certain hours",
+            "Parking is allowed for up to 10 minutes"
+        ],
+        "answer": "No parking or stopping at any time"
+    },
+    {
+        "question": "What does a single red line indicate?",
+        "options": [
+            "No parking or waiting during specified times",
+            "Free parking for a limited period",
+            "Only parking for commercial vehicles",
+            "Parking is allowed if you are in a rush"
+        ],
+        "answer": "No parking or waiting during specified times"
+    },
+    {
+        "question": "What is the meaning of a triangular warning sign with an exclamation mark?",
+        "options": [
+            "Caution: potential hazard ahead",
+            "Prohibition of hazardous actions",
+            "Information about nearby services",
+            "Directions to safety points"
+        ],
+        "answer": "Caution: potential hazard ahead"
+    },
+    {
+        "question": "What does a blue square sign generally indicate?",
+        "options": [
+            "Information about services like fuel or rest areas",
+            "A speed limit",
+            "A road closure",
+            "A diversion"
+        ],
+        "answer": "Information about services like fuel or rest areas"
+    },
+    {
+        "question": "What does a 'No Entry' sign indicate?",
+        "options": [
+            "Vehicles cannot enter this road",
+            "Vehicles can enter but must turn left",
+            "You can enter but only in an emergency",
+            "The road is closed for maintenance"
+        ],
+        "answer": "Vehicles cannot enter this road"
+    },
+    {
+        "question": "What do yellow road markings generally mean?",
+        "options": [
+            "Warning or caution",
+            "No parking or stopping",
+            "Pedestrian lanes",
+            "Reserved lanes for emergency vehicles"
+        ],
+        "answer": "No parking or stopping"
+    },
+    {
+        "question": "What should you do when you see a road sign showing 'Give Way'?",
+        "options": [
+            "Stop and wait for other vehicles",
+            "Continue driving as normal",
+            "Give way to vehicles approaching from the right",
+            "Accelerate to overtake"
+        ],
+        "answer": "Give way to vehicles approaching from the right"
+    },
+    {
+        "question": "What does a circular blue road sign with a white arrow indicate?",
+        "options": [
+            "A one-way street",
+            "A bus lane",
+            "A cycle lane",
+            "A mandatory turn"
+        ],
+        "answer": "A mandatory turn"
+    },
+    {
+        "question": "What is indicated by a road sign with a weight limit?",
+        "options": [
+            "Only vehicles under a certain weight can pass",
+            "Heavy vehicles should slow down",
+            "All vehicles must stop before proceeding",
+            "There is a toll for heavier vehicles"
+        ],
+        "answer": "Only vehicles under a certain weight can pass"
+    },
+    {
+        "question": "What does a solid white line on the road signify?",
+        "options": [
+            "A lane change is prohibited",
+            "A no-parking zone",
+            "The start of a bus lane",
+            "The end of a passing lane"
+        ],
+        "answer": "A lane change is prohibited"
+    },
+    {
+        "question": "What should you do if you're approaching a junction with no traffic lights or signs?",
+        "options": [
+            "Give way to traffic coming from your right",
+            "Give way to traffic coming from your left",
+            "Always stop completely",
+            "Proceed with caution, as if it were a one-way street"
+        ],
+        "answer": "Give way to traffic coming from your right"
+    },
+    {
+        "question": "What does a flashing amber light at a traffic signal mean?",
+        "options": [
+            "Stop and wait for the green light",
+            "Proceed with caution, but no need to stop",
+            "Go, but do not exceed the speed limit",
+            "Speed up to clear the junction"
+        ],
+        "answer": "Proceed with caution, but no need to stop"
+    },
+    {
+        "question": "What is the meaning of a sign with a red border and a number, like '30'?",
+        "options": [
+            "Speed limit",
+            "Parking restriction",
+            "End of the motorway",
+            "Start of a new road"
+        ],
+        "answer": "Speed limit"
+    },
+    {
+        "question": "What does a broken white line mean?",
+        "options": [
+            "You may overtake when it's safe to do so",
+            "No overtaking is allowed",
+            "No stopping",
+            "Only emergency vehicles are allowed to use this lane"
+        ],
+        "answer": "You may overtake when it's safe to do so"
+    }
+]

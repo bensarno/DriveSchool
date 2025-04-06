@@ -45,7 +45,7 @@ function App() {
             return "Please provide a valid message.";
         }
 
-        const apiKey = "WRK5B61lDuEGLzya0bImevarywNiVii99j3ne3QL"; // Replace with your Cohere API key
+        const apiKey = process.env.REACT_APP_COHERE_API_KEY; // Replace with your Cohere API key
         const apiUrl = "https://api.cohere.com/v2/chat";
 
         const headers = {

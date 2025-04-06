@@ -1,9 +1,10 @@
 ﻿import React, { useState, useEffect } from 'react';
-import quizData from './Questions/RSandMQuizQuestions.json'; // Import the JSON file
+import quizData from './Questions/FullMockQuestions.json'        
 
 import '../Page3.css'; // Your custom styles
 
-function RSandMQuiz() {
+function FullMock() {
+
     const [questions, setQuestions] = useState([]); // Holds the quiz data
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Tracks current question index
     const [selectedAnswers, setSelectedAnswers] = useState([]); // Stores user's answers
@@ -11,16 +12,16 @@ function RSandMQuiz() {
     const [loading, setLoading] = useState(true); // Loading state while questions are being "fetched"
     const [error, setError] = useState(""); // Error handling
 
-    // Function to get 10 random questions from quizData
+    // Function to get 50 random questions from quizData
     const getRandomQuestions = (data, num) => {
         const shuffled = [...data].sort(() => Math.random() - 0.5); // Shuffle questions randomly
         return shuffled.slice(0, num); // Pick the first `num` questions
     };
 
-    // Simulate loading of 10 random questions from the JSON file
+    // Simulate loading of 50 random questions from the JSON file
     useEffect(() => {
         if (quizData && quizData.length > 0) {
-            const randomQuestions = getRandomQuestions(quizData, 10); // Get 10 random questions
+            const randomQuestions = getRandomQuestions(quizData, 50); // Get 50 random questions
             setQuestions(randomQuestions); // Set the loaded questions
             setLoading(false); // Turn off loading state once data is loaded
         } else {
@@ -45,11 +46,10 @@ function RSandMQuiz() {
                 return score + (q.answer === updatedAnswers[i] ? 1 : 0);
             }, 0);
 
-            localStorage.setItem("RSandMQuiz_Score", finalScore);
-            localStorage.setItem("RSandMQuiz_Total", questions.length);
+            localStorage.setItem("FullMock_Score", finalScore);
+            localStorage.setItem("FullMock_Total", questions.length);
         }
     };
-
 
     // Calculate the user's score
     const getScore = () => {
@@ -87,7 +87,7 @@ function RSandMQuiz() {
 
     return (
         <div className="page3-container">
-            <h1 className="page3-header">UK Road Safety and Markings Quiz</h1>
+            <h1 className="page3-header">Full Mock Quiz</h1>
             {!isQuizFinished ? (
                 <div className="quiz-question">
                     <h2>Question {currentQuestionIndex + 1} of {questions.length}</h2>
@@ -118,4 +118,4 @@ function RSandMQuiz() {
     );
 }
 
-export default RSandMQuiz;
+export default FullMock;

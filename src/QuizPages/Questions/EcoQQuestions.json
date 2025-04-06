@@ -1,0 +1,222 @@
+[
+    {
+        "question": "What is the most fuel-efficient speed for most vehicles on motorways?",
+        "options": [
+            "50-55 mph",
+            "60-65 mph",
+            "70-75 mph",
+            "80-85 mph"
+        ],
+        "answer": "50-55 mph"
+    },
+    {
+        "question": "How can you improve your fuel efficiency while driving in urban areas?",
+        "options": [
+            "Drive at a constant speed and avoid frequent acceleration and braking",
+            "Drive at the maximum speed limit",
+            "Keep your air conditioning on to maintain comfort",
+            "Accelerate quickly to reach the desired speed"
+        ],
+        "answer": "Drive at a constant speed and avoid frequent acceleration and braking"
+    },
+    {
+        "question": "Which of the following is a key factor in reducing carbon emissions while driving?",
+        "options": [
+            "Driving at higher speeds",
+            "Reducing weight in the vehicle by removing unnecessary items",
+            "Increased use of air conditioning",
+            "Driving with the windows open at high speeds"
+        ],
+        "answer": "Reducing weight in the vehicle by removing unnecessary items"
+    },
+    {
+        "question": "How does maintaining the correct tire pressure impact fuel efficiency?",
+        "options": [
+            "It decreases fuel efficiency by increasing rolling resistance",
+            "It improves fuel efficiency by reducing rolling resistance",
+            "It has no effect on fuel efficiency",
+            "It increases tire wear but does not affect fuel efficiency"
+        ],
+        "answer": "It improves fuel efficiency by reducing rolling resistance"
+    },
+    {
+        "question": "What is the benefit of coasting to a stop rather than braking suddenly?",
+        "options": [
+            "It uses less fuel and reduces brake wear",
+            "It saves time",
+            "It improves safety",
+            "It increases fuel consumption"
+        ],
+        "answer": "It uses less fuel and reduces brake wear"
+    },
+    {
+        "question": "Which of the following actions should you take to improve fuel economy when driving on a motorway?",
+        "options": [
+            "Use cruise control to maintain a steady speed",
+            "Drive at the highest speed limit allowed",
+            "Leave the engine running when stopped at traffic signals",
+            "Use air conditioning at all times to stay cool"
+        ],
+        "answer": "Use cruise control to maintain a steady speed"
+    },
+    {
+        "question": "What should you avoid doing in order to improve your vehicle’s fuel efficiency?",
+        "options": [
+            "Drive at a constant speed",
+            "Use air conditioning sparingly",
+            "Carrying heavy loads in the car",
+            "Use higher gears as much as possible"
+        ],
+        "answer": "Carrying heavy loads in the car"
+    },
+    {
+        "question": "How can you improve fuel efficiency when starting your engine?",
+        "options": [
+            "Start the engine and immediately drive off without idling",
+            "Allow the engine to warm up for a few minutes before driving",
+            "Rev the engine to warm it up faster",
+            "Let the engine idle for a longer time"
+        ],
+        "answer": "Start the engine and immediately drive off without idling"
+    },
+    {
+        "question": "Why should you avoid idling your engine for long periods?",
+        "options": [
+            "It wastes fuel and increases emissions",
+            "It saves fuel by keeping the engine at a stable temperature",
+            "It has no effect on fuel consumption",
+            "It cools the engine down faster"
+        ],
+        "answer": "It wastes fuel and increases emissions"
+    },
+    {
+        "question": "What is the most efficient way to use your vehicle’s air conditioning?",
+        "options": [
+            "Use it when driving at high speeds to cool down the cabin quickly",
+            "Keep it on constantly, even in cooler weather",
+            "Turn it off when driving at low speeds and only use it when necessary",
+            "Use it only when the temperature is above 30°C"
+        ],
+        "answer": "Turn it off when driving at low speeds and only use it when necessary"
+    },
+    {
+        "question": "What is the effect of using higher gears at lower speeds on fuel efficiency?",
+        "options": [
+            "It increases fuel consumption",
+            "It improves fuel efficiency by reducing engine RPM",
+            "It has no effect on fuel efficiency",
+            "It makes the vehicle harder to drive"
+        ],
+        "answer": "It increases fuel consumption"
+    },
+    {
+        "question": "How can reducing the use of the vehicle’s air conditioning help in eco-driving?",
+        "options": [
+            "It reduces the amount of power taken from the engine, thus saving fuel",
+            "It has no effect on fuel consumption",
+            "It makes the engine run hotter",
+            "It decreases the amount of fuel required to cool the cabin"
+        ],
+        "answer": "It reduces the amount of power taken from the engine, thus saving fuel"
+    },
+    {
+        "question": "What is an eco-driving practice for keeping your vehicle in good condition?",
+        "options": [
+            "Regularly servicing your vehicle to ensure it's running efficiently",
+            "Avoiding any maintenance unless something breaks",
+            "Skipping oil changes to save time",
+            "Ignoring tire maintenance"
+        ],
+        "answer": "Regularly servicing your vehicle to ensure it's running efficiently"
+    },
+    {
+        "question": "How does accelerating gently impact fuel consumption?",
+        "options": [
+            "It reduces fuel consumption and minimizes engine strain",
+            "It increases fuel consumption but saves time",
+            "It has no effect on fuel consumption",
+            "It causes the engine to burn more fuel"
+        ],
+        "answer": "It reduces fuel consumption and minimizes engine strain"
+    },
+    {
+        "question": "What is the effect of driving with the windows open at high speeds on fuel efficiency?",
+        "options": [
+            "It increases drag, thus reducing fuel efficiency",
+            "It improves fuel efficiency by cooling the car",
+            "It has no effect on fuel efficiency",
+            "It makes the car more fuel-efficient at lower speeds"
+        ],
+        "answer": "It increases drag, thus reducing fuel efficiency"
+    },
+    {
+        "question": "How does maintaining a steady speed improve fuel efficiency?",
+        "options": [
+            "It avoids excessive acceleration and braking, which consumes more fuel",
+            "It makes the engine work harder and uses more fuel",
+            "It leads to the engine running inefficiently",
+            "It has no effect on fuel efficiency"
+        ],
+        "answer": "It avoids excessive acceleration and braking, which consumes more fuel"
+    },
+    {
+        "question": "What is the benefit of driving in the highest gear possible without overloading the engine?",
+        "options": [
+            "It reduces engine revolutions and saves fuel",
+            "It increases fuel consumption by reducing engine efficiency",
+            "It makes the car accelerate faster",
+            "It has no impact on fuel consumption"
+        ],
+        "answer": "It reduces engine revolutions and saves fuel"
+    },
+    {
+        "question": "What should you do if you are driving on a hill to improve fuel efficiency?",
+        "options": [
+            "Use a lower gear to prevent the engine from working too hard",
+            "Use the brakes to control speed",
+            "Change gears constantly to maintain the speed",
+            "Keep the vehicle in the highest gear to minimize fuel usage"
+        ],
+        "answer": "Use a lower gear to prevent the engine from working too hard"
+    },
+    {
+        "question": "What is the advantage of using regenerative braking in hybrid vehicles?",
+        "options": [
+            "It captures energy during braking and returns it to the battery, improving fuel efficiency",
+            "It uses more fuel to charge the battery",
+            "It increases the brake wear but saves fuel",
+            "It has no effect on fuel efficiency"
+        ],
+        "answer": "It captures energy during braking and returns it to the battery, improving fuel efficiency"
+    },
+    {
+        "question": "What should you do to minimize fuel consumption during stop-and-go driving in heavy traffic?",
+        "options": [
+            "Turn off the engine when stopped for more than a minute",
+            "Leave the engine running to avoid restarting",
+            "Use the air conditioning to stay cool",
+            "Drive at the highest speed possible between stops"
+        ],
+        "answer": "Turn off the engine when stopped for more than a minute"
+    },
+    {
+        "question": "How does driving in eco mode (if available) help improve fuel efficiency?",
+        "options": [
+            "It optimizes engine performance for better fuel economy",
+            "It reduces fuel efficiency by prioritizing power",
+            "It has no effect on fuel economy",
+            "It makes the car run faster"
+        ],
+        "answer": "It optimizes engine performance for better fuel economy"
+    },
+    {
+        "question": "How does reducing your overall weight impact fuel efficiency?",
+        "options": [
+            "It reduces the effort the engine needs to move the vehicle, saving fuel",
+            "It has no effect on fuel consumption",
+            "It increases fuel consumption because the vehicle has to work harder",
+            "It decreases fuel consumption slightly but has no major impact"
+        ],
+        "answer": "It reduces the effort the engine needs to move the vehicle, saving fuel"
+    }
+]

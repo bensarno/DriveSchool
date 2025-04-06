@@ -1,0 +1,232 @@
+[
+    {
+        "question": "What does a solid white line at the side of the road mean?",
+        "options": [
+            "No parking",
+            "No overtaking",
+            "No stopping except in an emergency",
+            "You must drive in the left lane"
+        ],
+        "answer": "No parking"
+    },
+    {
+        "question": "What is the correct position for turning left at a junction?",
+        "options": [
+            "In the right lane",
+            "In the left lane with your left indicator on",
+            "In the right lane with your right indicator on",
+            "In any lane, provided the road is clear"
+        ],
+        "answer": "In the left lane with your left indicator on"
+    },
+    {
+        "question": "What should you do if you approach a red traffic light?",
+        "options": [
+            "Stop at the stop line or before the light",
+            "Speed up to get through before it changes",
+            "Proceed with caution",
+            "Stop only if there are other vehicles waiting"
+        ],
+        "answer": "Stop at the stop line or before the light"
+    },
+    {
+        "question": "When driving on a dual carriageway, when can you overtake?",
+        "options": [
+            "Always, regardless of the traffic conditions",
+            "Only if it is clear and it�s safe to do so",
+            "Only when the road is clear of any traffic",
+            "You cannot overtake on a dual carriageway"
+        ],
+        "answer": "Only if it is clear and it�s safe to do so"
+    },
+    {
+        "question": "When should you give way to pedestrians at a zebra crossing?",
+        "options": [
+            "Only when they are halfway across",
+            "When they are waiting to cross",
+            "Only if they are in front of your vehicle",
+            "Only if there is a red light"
+        ],
+        "answer": "When they are waiting to cross"
+    },
+    {
+        "question": "What should you do when you see an amber traffic light?",
+        "options": [
+            "Stop unless you are already committed to the junction",
+            "Speed up to get through before it turns red",
+            "Stop immediately",
+            "Go through without slowing down"
+        ],
+        "answer": "Stop unless you are already committed to the junction"
+    },
+    {
+        "question": "When driving on the motorway, what is the national speed limit for cars and motorcycles?",
+        "options": [
+            "50 mph",
+            "60 mph",
+            "70 mph",
+            "80 mph"
+        ],
+        "answer": "70 mph"
+    },
+    {
+        "question": "What should you do when approaching a roundabout?",
+        "options": [
+            "Give way to traffic already on the roundabout unless road markings say otherwise",
+            "Speed up to avoid getting stuck behind slower traffic",
+            "Stop at the entrance and wait for a gap",
+            "Drive straight across without stopping"
+        ],
+        "answer": "Give way to traffic already on the roundabout unless road markings say otherwise"
+    },
+    {
+        "question": "What does a blue circular road sign indicate?",
+        "options": [
+            "Give way",
+            "No entry",
+            "A mandatory instruction",
+            "No parking"
+        ],
+        "answer": "A mandatory instruction"
+    },
+    {
+        "question": "What is the purpose of the 'stop' sign at a junction?",
+        "options": [
+            "To warn you that a junction is ahead",
+            "To indicate that you must stop and give way to all traffic and pedestrians",
+            "To signal that you can go through if the road is clear",
+            "To give priority to the traffic coming from the left"
+        ],
+        "answer": "To indicate that you must stop and give way to all traffic and pedestrians"
+    },
+    {
+        "question": "When can you overtake on the left in the UK?",
+        "options": [
+            "When driving on a single carriageway",
+            "When overtaking a cyclist",
+            "When the vehicle in front is turning right and there is a lane for you to pass",
+            "You should never overtake on the left"
+        ],
+        "answer": "When the vehicle in front is turning right and there is a lane for you to pass"
+    },
+    {
+        "question": "When must you use your horn?",
+        "options": [
+            "Only when overtaking",
+            "To warn other drivers of your presence if necessary",
+            "To greet other drivers",
+            "To indicate that you are about to turn"
+        ],
+        "answer": "To warn other drivers of your presence if necessary"
+    },
+    {
+        "question": "What does the broken white line in the middle of the road mean?",
+        "options": [
+            "You may overtake if it is safe",
+            "You must not overtake",
+            "You must slow down",
+            "You must stop"
+        ],
+        "answer": "You may overtake if it is safe"
+    },
+    {
+        "question": "What should you do if you see a pedestrian with a white cane or guide dog at a crossing?",
+        "options": [
+            "Give way to the pedestrian",
+            "Speed up to avoid blocking the crossing",
+            "Wave to the pedestrian to cross",
+            "Continue as normal"
+        ],
+        "answer": "Give way to the pedestrian"
+    },
+    {
+        "question": "What is the rule when turning right at a T-junction?",
+        "options": [
+            "Give way to traffic on your left",
+            "Give way to traffic on your right",
+            "Give way to traffic in both directions",
+            "There is no need to give way"
+        ],
+        "answer": "Give way to traffic on your right"
+    },
+    {
+        "question": "What does a yellow box junction mean?",
+        "options": [
+            "You may stop if you are waiting to turn",
+            "You must keep the area clear unless your exit is blocked",
+            "It is a no parking zone",
+            "You can stop briefly if you are in a hurry"
+        ],
+        "answer": "You must keep the area clear unless your exit is blocked"
+    },
+    {
+        "question": "When must you use your headlights?",
+        "options": [
+            "Only at night",
+            "When visibility is seriously reduced to less than 100 meters",
+            "Only in foggy conditions",
+            "Only when driving in urban areas"
+        ],
+        "answer": "When visibility is seriously reduced to less than 100 meters"
+    },
+    {
+        "question": "What does a green traffic light mean?",
+        "options": [
+            "Stop and wait for the light to change",
+            "Go if it is safe to do so",
+            "Proceed carefully, but only if the road is clear",
+            "Go through without slowing down"
+        ],
+        "answer": "Go if it is safe to do so"
+    },
+    {
+        "question": "When is it legal to park on double yellow lines?",
+        "options": [
+            "When the parking restriction sign allows it",
+            "At night",
+            "When unloading",
+            "You can never park on double yellow lines"
+        ],
+        "answer": "When the parking restriction sign allows it"
+    },
+    {
+        "question": "What should you do if you are driving and a vehicle starts to overtake you?",
+        "options": [
+            "Speed up to prevent the vehicle from overtaking",
+            "Stay in your lane and maintain your speed",
+            "Move to the left to give them more space",
+            "Brake suddenly to make the vehicle stop"
+        ],
+        "answer": "Stay in your lane and maintain your speed"
+    },
+    {
+        "question": "What does a 'no entry' sign indicate?",
+        "options": [
+            "You must stop and reverse",
+            "You must not enter the road",
+            "You can drive through if the road is clear",
+            "You may only enter the road at specific times"
+        ],
+        "answer": "You must not enter the road"
+    },
+    {
+        "question": "What is the maximum speed limit for cars on a single carriageway road?",
+        "options": [
+            "30 mph",
+            "50 mph",
+            "60 mph",
+            "70 mph"
+        ],
+        "answer": "60 mph"
+    },
+    {
+        "question": "What should you do when approaching a slow-moving vehicle in front of you on a single lane road?",
+        "options": [
+            "Overtake as soon as possible",
+            "Wait until it is safe to overtake",
+            "Honk your horn to warn the driver",
+            "Flash your headlights to indicate you want to pass"
+        ],
+        "answer": "Wait until it is safe to overtake"
+    }
+]

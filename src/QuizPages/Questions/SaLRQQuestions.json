@@ -1,0 +1,242 @@
+[
+    {
+        "question": "What is the minimum legal tread depth for car tyres in the UK?",
+        "options": [
+            "0.5mm",
+            "1mm",
+            "1.6mm",
+            "2mm"
+        ],
+        "answer": "1.6mm"
+    },
+    {
+        "question": "What should you do if you�re involved in an accident, even if it's minor?",
+        "options": [
+            "Leave the scene immediately",
+            "Exchange details with the other party and report it to the police if necessary",
+            "Only exchange details with the police",
+            "Drive off if there�s no damage"
+        ],
+        "answer": "Exchange details with the other party and report it to the police if necessary"
+    },
+    {
+        "question": "How often should your car be MOT tested?",
+        "options": [
+            "Every year after the car is 3 years old",
+            "Every 2 years after the car is 5 years old",
+            "Every 6 months",
+            "Only when requested by the police"
+        ],
+        "answer": "Every year after the car is 3 years old"
+    },
+    {
+        "question": "What is the minimum age to hold a full UK driving licence?",
+        "options": [
+            "16",
+            "18",
+            "21",
+            "25"
+        ],
+        "answer": "17"
+    },
+    {
+        "question": "When are seat belts legally required to be worn in the UK?",
+        "options": [
+            "Only on highways",
+            "Only on long journeys",
+            "At all times, both front and rear seats",
+            "Only in the front seats"
+        ],
+        "answer": "At all times, both front and rear seats"
+    },
+    {
+        "question": "What is the legal alcohol limit for drivers in the UK?",
+        "options": [
+            "0.02% BAC",
+            "0.05% BAC",
+            "0.08% BAC",
+            "0.1% BAC"
+        ],
+        "answer": "0.08% BAC"
+    },
+    {
+        "question": "When should you use hazard warning lights in your vehicle?",
+        "options": [
+            "When you're parking on a double yellow line",
+            "When you're driving in heavy rain",
+            "When you're stopped for an emergency or temporary hazard",
+            "When you're driving on the motorway"
+        ],
+        "answer": "When you're stopped for an emergency or temporary hazard"
+    },
+    {
+        "question": "What does it mean if you see a red light on a traffic signal?",
+        "options": [
+            "Stop and wait until the light changes",
+            "Go if the road is clear",
+            "Proceed cautiously",
+            "Accelerate to pass quickly"
+        ],
+        "answer": "Stop and wait until the light changes"
+    },
+    {
+        "question": "Is it legal to use a mobile phone while driving in the UK?",
+        "options": [
+            "Yes, if you are using hands-free mode",
+            "Yes, as long as the phone is not in your hand",
+            "No, unless you are parked safely",
+            "Yes, only when at traffic lights"
+        ],
+        "answer": "No, unless you are parked safely"
+    },
+    {
+        "question": "How should you respond if an emergency vehicle with flashing lights is behind you?",
+        "options": [
+            "Speed up to clear the way",
+            "Move to the side and stop to let them pass",
+            "Keep driving at the same speed",
+            "Ignore it and continue driving"
+        ],
+        "answer": "Move to the side and stop to let them pass"
+    },
+    {
+        "question": "What should you do if you break down on a motorway?",
+        "options": [
+            "Stay in the vehicle and call for roadside assistance",
+            "Exit the motorway immediately",
+            "Drive to the nearest service area",
+            "Move your car to the hard shoulder and wait"
+        ],
+        "answer": "Move your car to the hard shoulder and wait"
+    },
+    {
+        "question": "At what speed should you drive in a 30 mph zone unless otherwise stated?",
+        "options": [
+            "20 mph",
+            "30 mph",
+            "40 mph",
+            "50 mph"
+        ],
+        "answer": "30 mph"
+    },
+    {
+        "question": "What must you do before overtaking another vehicle?",
+        "options": [
+            "Make sure it�s safe, check mirrors, and signal your intent",
+            "Accelerate quickly",
+            "Only signal once you�ve overtaken",
+            "Honk the horn to alert the driver"
+        ],
+        "answer": "Make sure it�s safe, check mirrors, and signal your intent"
+    },
+    {
+        "question": "When must you stop for a school crossing patrol?",
+        "options": [
+            "When the patrol signals you to stop",
+            "Only when the patrol is standing in the middle of the road",
+            "Only when children are crossing",
+            "Only if the lights are flashing"
+        ],
+        "answer": "When the patrol signals you to stop"
+    },
+    {
+        "question": "What is the purpose of the Road Tax in the UK?",
+        "options": [
+            "To pay for car repairs",
+            "To fund road maintenance and other transport-related infrastructure",
+            "To cover fuel costs",
+            "To contribute to insurance costs"
+        ],
+        "answer": "To fund road maintenance and other transport-related infrastructure"
+    },
+    {
+        "question": "What should you do if your vehicle�s brake lights fail while driving?",
+        "options": [
+            "Use hand signals to indicate stopping or slowing down",
+            "Continue driving and fix it later",
+            "Drive at a slower speed",
+            "Use your hazard lights"
+        ],
+        "answer": "Use hand signals to indicate stopping or slowing down"
+    },
+    {
+        "question": "What is the legal speed limit on a dual carriageway?",
+        "options": [
+            "50 mph",
+            "60 mph",
+            "70 mph",
+            "80 mph"
+        ],
+        "answer": "70 mph"
+    },
+    {
+        "question": "What does the �congestion charge� apply to?",
+        "options": [
+            "Only petrol vehicles",
+            "Only diesel vehicles",
+            "Vehicles driven within a designated zone in London",
+            "All vehicles driving in cities"
+        ],
+        "answer": "Vehicles driven within a designated zone in London"
+    },
+    {
+        "question": "What should you do if you see a red warning triangle on the road?",
+        "options": [
+            "Speed up to pass quickly",
+            "Stop immediately",
+            "Move carefully and slow down",
+            "Ignore it and keep going"
+        ],
+        "answer": "Move carefully and slow down"
+    },
+    {
+        "question": "Can you drive without insurance in the UK?",
+        "options": [
+            "Yes, as long as your car is taxed",
+            "Yes, but only in emergencies",
+            "No, it is illegal to drive without insurance",
+            "Yes, if you are driving on private property"
+        ],
+        "answer": "No, it is illegal to drive without insurance"
+    },
+    {
+        "question": "What is the maximum number of points you can get on your driving licence before it is revoked?",
+        "options": [
+            "6 points",
+            "9 points",
+            "12 points",
+            "18 points"
+        ],
+        "answer": "12 points"
+    },
+    {
+        "question": "What should you do if you are caught by a speed camera?",
+        "options": [
+            "Ignore the notice if you believe it�s wrong",
+            "Wait for a speeding ticket or notice of prosecution",
+            "Go to court immediately",
+            "Speed up to get away from the camera"
+        ],
+        "answer": "Wait for a speeding ticket or notice of prosecution"
+    },
+    {
+        "question": "How should you deal with a large vehicle or lorry in bad weather conditions?",
+        "options": [
+            "Stay at a safe distance, avoid overtaking, and be cautious in high winds",
+            "Always overtake quickly to avoid delays",
+            "Follow closely behind to reduce wind resistance",
+            "Overtake as soon as possible even if it's not safe"
+        ],
+        "answer": "Stay at a safe distance, avoid overtaking, and be cautious in high winds"
+    },
+    {
+        "question": "What should you do when parking at night on a road without street lighting?",
+        "options": [
+            "Use your handbrake only",
+            "Switch on your vehicle�s sidelights",
+            "Turn off your headlights and leave the engine running",
+            "Park without any lights on"
+        ],
+        "answer": "Switch on your vehicle�s sidelights"
+    }
+]

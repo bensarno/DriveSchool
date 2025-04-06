@@ -1,0 +1,212 @@
+[
+    {
+        "question": "What should you do if you come across a collision scene and the driver is unconscious but breathing?",
+        "options": [
+            "Place them in the recovery position and monitor their breathing",
+            "Perform CPR immediately",
+            "Leave them where they are and call for help",
+            "Try to wake them by shaking them"
+        ],
+        "answer": "Place them in the recovery position and monitor their breathing"
+    },
+    {
+        "question": "If you are driving and you see an injured person on the roadside, what should you do first?",
+        "options": [
+            "Call 999 or 112 immediately and provide details of the location and severity",
+            "Stop immediately and provide first aid",
+            "Try to move the person to a safer location",
+            "Continue driving and report the incident later"
+        ],
+        "answer": "Call 999 or 112 immediately and provide details of the location and severity"
+    },
+    {
+        "question": "What should you do if you find someone with a head injury and they are bleeding heavily?",
+        "options": [
+            "Apply pressure to the wound and keep the head elevated",
+            "Lay the person down and raise their feet",
+            "Give them water and wait for help",
+            "Use a tourniquet to stop the bleeding"
+        ],
+        "answer": "Apply pressure to the wound and keep the head elevated"
+    },
+    {
+        "question": "If you come across an injured driver in a vehicle, and they are not breathing, what should you do first?",
+        "options": [
+            "Check their airway and start CPR if necessary",
+            "Open the car door and remove them from the vehicle",
+            "Wait for emergency services to arrive",
+            "Give them some water to help revive them"
+        ],
+        "answer": "Check their airway and start CPR if necessary"
+    },
+    {
+        "question": "What is the first thing you should do if a pedestrian is knocked down by a car?",
+        "options": [
+            "Stop your vehicle in a safe location and call emergency services",
+            "Try to give first aid before calling for help",
+            "Drive off to avoid causing further accidents",
+            "Check the pedestrian for signs of life and move them to safety"
+        ],
+        "answer": "Stop your vehicle in a safe location and call emergency services"
+    },
+    {
+        "question": "If you are the first on the scene of an accident, what is the first priority?",
+        "options": [
+            "Ensure your safety and the safety of others around the scene",
+            "Check for injuries and administer first aid immediately",
+            "Move the vehicle to the side of the road",
+            "Take photographs for insurance purposes"
+        ],
+        "answer": "Ensure your safety and the safety of others around the scene"
+    },
+    {
+        "question": "If someone is choking while you are driving, what should you do?",
+        "options": [
+            "Encourage them to cough and, if necessary, perform back blows",
+            "Give them water to clear the obstruction",
+            "Perform CPR immediately",
+            "Attempt to reach into their throat and remove the obstruction"
+        ],
+        "answer": "Encourage them to cough and, if necessary, perform back blows"
+    },
+    {
+        "question": "What should you do if you witness a collision with injuries, but you are unsure about the severity of the injuries?",
+        "options": [
+            "Call 999 or 112 and provide all the information you have",
+            "Drive away to avoid getting involved in the situation",
+            "Approach the victims and start administering first aid",
+            "Move the injured people away from the road"
+        ],
+        "answer": "Call 999 or 112 and provide all the information you have"
+    },
+    {
+        "question": "What is the best action to take if you suspect a driver is suffering from a medical emergency while on the road?",
+        "options": [
+            "Pull over and call emergency services",
+            "Try to pass the driver to avoid causing an obstruction",
+            "Flash your lights to warn other road users",
+            "Ignore the situation and continue driving"
+        ],
+        "answer": "Pull over and call emergency services"
+    },
+    {
+        "question": "If a person is suffering from shock following a road accident, how should you assist them?",
+        "options": [
+            "Lay them down with their legs raised slightly and keep them warm",
+            "Give them water to drink immediately",
+            "Move them to a standing position to get fresh air",
+            "Encourage them to walk to aid circulation"
+        ],
+        "answer": "Lay them down with their legs raised slightly and keep them warm"
+    },
+    {
+        "question": "What should you do if you are involved in a road accident and someone has a broken limb?",
+        "options": [
+            "Immobilize the limb with a splint and call for medical help",
+            "Try to move the injured person into a more comfortable position",
+            "Give them painkillers to ease the discomfort",
+            "Encourage them to walk to prevent stiffness"
+        ],
+        "answer": "Immobilize the limb with a splint and call for medical help"
+    },
+    {
+        "question": "What should you do if you are involved in a road accident and there is a fire risk?",
+        "options": [
+            "Get yourself and others out of the vehicle immediately and move to safety",
+            "Try to extinguish the fire with a fire extinguisher",
+            "Wait for emergency services to arrive and let them handle the situation",
+            "Stay inside the vehicle and wait for help"
+        ],
+        "answer": "Get yourself and others out of the vehicle immediately and move to safety"
+    },
+    {
+        "question": "What action should you take if you are involved in an accident but have minor injuries?",
+        "options": [
+            "Call for help and report the accident to the police",
+            "Leave the scene immediately to avoid further conflict",
+            "Try to negotiate with the other driver privately",
+            "Attempt to resolve the situation without reporting it"
+        ],
+        "answer": "Call for help and report the accident to the police"
+    },
+    {
+        "question": "If you are giving first aid to a driver involved in a road accident, and they are unconscious but breathing, how should you position them?",
+        "options": [
+            "Place them in the recovery position",
+            "Leave them lying flat on their back",
+            "Sit them up to aid breathing",
+            "Move them immediately to avoid further injury"
+        ],
+        "answer": "Place them in the recovery position"
+    },
+    {
+        "question": "What should you do if you are involved in a road traffic collision and someone is trapped in their vehicle?",
+        "options": [
+            "Call emergency services and wait for them to arrive",
+            "Try to remove them from the vehicle to prevent further injury",
+            "Check if they are breathing and keep them calm until help arrives",
+            "Move the vehicle to a safe location"
+        ],
+        "answer": "Call emergency services and wait for them to arrive"
+    },
+    {
+        "question": "If you come across an accident where someone is having a seizure, what should you do?",
+        "options": [
+            "Ensure the person is safe and place something soft under their head",
+            "Try to hold the person still to prevent injury",
+            "Offer them water once the seizure ends",
+            "Encourage them to stand and walk after the seizure"
+        ],
+        "answer": "Ensure the person is safe and place something soft under their head"
+    },
+    {
+        "question": "What should you do if you are driving and encounter a pedestrian who has been hit by a vehicle?",
+        "options": [
+            "Call 999 or 112 for immediate assistance and provide first aid if needed",
+            "Check if the pedestrian is alive and move them to a safe location",
+            "Keep driving to avoid getting involved in the situation",
+            "Wait for the pedestrian to recover on their own"
+        ],
+        "answer": "Call 999 or 112 for immediate assistance and provide first aid if needed"
+    },
+    {
+        "question": "What should you do if you come across a road accident and the victim is bleeding profusely?",
+        "options": [
+            "Apply pressure to the wound and call for medical help immediately",
+            "Give them water and wait for them to recover",
+            "Leave the scene and avoid getting involved",
+            "Try to clean the wound with a cloth"
+        ],
+        "answer": "Apply pressure to the wound and call for medical help immediately"
+    },
+    {
+        "question": "What should you do if you witness a driver collapse while driving and the car is stationary?",
+        "options": [
+            "Pull over, ensure your safety, and call 999 or 112 immediately",
+            "Attempt to resuscitate the driver without calling emergency services",
+            "Stay in the car and wait for the driver to recover",
+            "Move the driver from the vehicle before calling for help"
+        ],
+        "answer": "Pull over, ensure your safety, and call 999 or 112 immediately"
+    },
+    {
+        "question": "If you are driving and notice a fellow motorist is unconscious behind the wheel, what should you do?",
+        "options": [
+            "Immediately pull over and call 999 or 112 for assistance",
+            "Try to wake the driver up by knocking on the window",
+            "Continue driving and report the driver later",
+            "Wait for the driver to regain consciousness"
+        ],
+        "answer": "Immediately pull over and call 999 or 112 for assistance"
+    },
+    {
+        "question": "What is the best way to assist an injured motorcyclist at the scene of an accident?",
+        "options": [
+            "Ensure the person is not moved unless in immediate danger and call for help",
+            "Try to remove their helmet and check for head injuries",
+            "Encourage them to stand and walk around to check for injuries",
+            "Give them water and let them rest"
+        ],
+        "answer": "Ensure the person is not moved unless in immediate danger and call for help"
+    }
+]

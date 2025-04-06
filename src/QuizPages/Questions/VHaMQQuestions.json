@@ -1,0 +1,222 @@
+[
+    {
+        "question": "What should you do if your vehicle begins to skid on a slippery road?",
+        "options": [
+            "Steer sharply in the opposite direction of the skid",
+            "Apply the brakes firmly",
+            "Take your foot off the accelerator and steer into the skid",
+            "Accelerate to regain control"
+        ],
+        "answer": "Take your foot off the accelerator and steer into the skid"
+    },
+    {
+        "question": "What should you check regularly to ensure your vehicle is roadworthy?",
+        "options": [
+            "The fuel gauge",
+            "The engine noise",
+            "Tyre pressure, oil levels, and lights",
+            "The colour of the vehicle"
+        ],
+        "answer": "Tyre pressure, oil levels, and lights"
+    },
+    {
+        "question": "What is the correct way to check your tyre pressure?",
+        "options": [
+            "By checking the air pressure gauge after driving for a while",
+            "By looking at the tyre's tread depth",
+            "Using a reliable tyre pressure gauge when the tyres are cold",
+            "Only checking the pressure after driving long distances"
+        ],
+        "answer": "Using a reliable tyre pressure gauge when the tyres are cold"
+    },
+    {
+        "question": "What is the minimum tread depth for car tyres in the UK?",
+        "options": [
+            "1mm",
+            "1.6mm",
+            "2mm",
+            "3mm"
+        ],
+        "answer": "1.6mm"
+    },
+    {
+        "question": "What should you do if your vehicle�s engine temperature warning light comes on?",
+        "options": [
+            "Drive faster to cool it down",
+            "Pull over safely and turn off the engine to allow it to cool down",
+            "Check the engine immediately while driving",
+            "Turn on the air conditioning to cool the engine"
+        ],
+        "answer": "Pull over safely and turn off the engine to allow it to cool down"
+    },
+    {
+        "question": "When should you check the oil level in your vehicle?",
+        "options": [
+            "Only once a month",
+            "Before starting a long journey",
+            "At the end of the year",
+            "Only when the engine sounds loud"
+        ],
+        "answer": "Before starting a long journey"
+    },
+    {
+        "question": "What is the correct way to use the handbrake when parking?",
+        "options": [
+            "Only apply the handbrake if you're parking on a slope",
+            "Use the handbrake on level ground to secure the car",
+            "Use the handbrake when the car is moving slowly",
+            "Don�t use the handbrake on automatic cars"
+        ],
+        "answer": "Use the handbrake on level ground to secure the car"
+    },
+    {
+        "question": "What is the purpose of the Anti-lock Braking System (ABS)?",
+        "options": [
+            "To reduce engine noise",
+            "To allow you to steer while braking hard",
+            "To improve acceleration",
+            "To make the car go faster"
+        ],
+        "answer": "To allow you to steer while braking hard"
+    },
+    {
+        "question": "What should you do if you find your brake pads are worn down?",
+        "options": [
+            "Continue driving and wait for the next service",
+            "Get them checked and replaced immediately",
+            "Drive more slowly to prevent the brakes from wearing out further",
+            "Use the handbrake more often"
+        ],
+        "answer": "Get them checked and replaced immediately"
+    },
+    {
+        "question": "How often should you check the oil levels in your car?",
+        "options": [
+            "Once every 2 years",
+            "Once a month or before long journeys",
+            "Only when the car is making unusual noises",
+            "After every 500 miles"
+        ],
+        "answer": "Once a month or before long journeys"
+    },
+    {
+        "question": "What is the purpose of the rear fog lights?",
+        "options": [
+            "To help other vehicles see you in poor visibility",
+            "To make your vehicle look stylish",
+            "To indicate that you're reversing",
+            "To help you see in the dark"
+        ],
+        "answer": "To help other vehicles see you in poor visibility"
+    },
+    {
+        "question": "What should you do if your vehicle starts to overheat?",
+        "options": [
+            "Open the windows to cool down the engine",
+            "Switch off the air conditioning and pull over to let the engine cool down",
+            "Turn on the heater to divert heat from the engine",
+            "Drive faster to cool the engine"
+        ],
+        "answer": "Switch off the air conditioning and pull over to let the engine cool down"
+    },
+    {
+        "question": "What does the warning light for low tyre pressure mean?",
+        "options": [
+            "Your tyres are overinflated",
+            "One or more of your tyres are underinflated",
+            "The tyres need to be replaced immediately",
+            "The tyres need to be washed"
+        ],
+        "answer": "One or more of your tyres are underinflated"
+    },
+    {
+        "question": "What should you do if your headlights fail while driving at night?",
+        "options": [
+            "Continue driving at the same speed",
+            "Stop immediately and switch to parking lights",
+            "Use your hazard lights and drive carefully to the nearest service station",
+            "Turn on the interior lights and continue driving"
+        ],
+        "answer": "Use your hazard lights and drive carefully to the nearest service station"
+    },
+    {
+        "question": "What is the best way to handle a car that is skidding on ice?",
+        "options": [
+            "Apply the brakes firmly",
+            "Turn the steering wheel sharply",
+            "Take your foot off the accelerator and steer in the direction you want to go",
+            "Continue driving as normal"
+        ],
+        "answer": "Take your foot off the accelerator and steer in the direction you want to go"
+    },
+    {
+        "question": "What should you do if you see the oil pressure warning light on your dashboard?",
+        "options": [
+            "Continue driving as normal",
+            "Pull over safely and turn off the engine to check the oil level",
+            "Turn off the oil pressure light and continue driving",
+            "Wait until the oil is low and then top it up"
+        ],
+        "answer": "Pull over safely and turn off the engine to check the oil level"
+    },
+    {
+        "question": "What is the function of the catalytic converter?",
+        "options": [
+            "To make the car go faster",
+            "To reduce the emissions from the engine",
+            "To reduce fuel consumption",
+            "To increase the horsepower of the engine"
+        ],
+        "answer": "To reduce the emissions from the engine"
+    },
+    {
+        "question": "How can you prevent your vehicle from being involved in an accident due to poor road conditions?",
+        "options": [
+            "Drive at the maximum speed limit",
+            "Slow down, increase your following distance, and keep a safe distance from other vehicles",
+            "Use your horn to warn other drivers",
+            "Drive with your headlights on"
+        ],
+        "answer": "Slow down, increase your following distance, and keep a safe distance from other vehicles"
+    },
+    {
+        "question": "What is the main function of the power steering system?",
+        "options": [
+            "To increase the speed of the car",
+            "To help make steering easier",
+            "To stop the vehicle quickly",
+            "To improve fuel efficiency"
+        ],
+        "answer": "To help make steering easier"
+    },
+    {
+        "question": "When should you replace your windscreen wipers?",
+        "options": [
+            "When they start making noise",
+            "When they stop working completely",
+            "If they become cracked or damaged or if they no longer clear the screen effectively",
+            "Only when the weather is very rainy"
+        ],
+        "answer": "If they become cracked or damaged or if they no longer clear the screen effectively"
+    },
+    {
+        "question": "What is the main function of your vehicle's suspension system?",
+        "options": [
+            "To control the braking distance",
+            "To keep the car stable and comfortable",
+            "To increase engine power",
+            "To reduce tyre wear"
+        ],
+        "answer": "To keep the car stable and comfortable"
+    },
+    {
+        "question": "What should you do if your car starts to make a strange noise while driving?",
+        "options": [
+            "Ignore the noise and continue driving",
+            "Stop the car immediately and inspect the source of the noise",
+            "Turn off the car and restart it",
+            "Drive faster to check if the noise goes away"
+        ],
+        "answer": "Stop the car immediately and inspect the source of the noise"
+    }
+]
