@@ -1,0 +1,16 @@
+/* src/Page3.css */
+.page3-container {
+    background-color: #2e3255;
+    padding: 20px;
+    text-align: center;
+}
+
+.page3-header {
+    color: white;
+    font-size: 36px;
+}
+
+.page3-content {
+    font-size: 18px;
+    color: darkolivegreen;
+}

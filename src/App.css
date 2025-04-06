@@ -1,41 +1,64 @@
-/* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* Full-width header */
+.header {
+    width: 100%; /* Full width of the viewport */
+    background-color: #4c5077;
+    display: flex;
+    justify-content: space-between; /* Evenly space out the circles */
+    align-items: center;
+    padding: 15px;
+    height: 60px;
+    color: white;
+    position: fixed; /* Keep header fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Ensure header stays on top */
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
-/* Make the app take up the full viewport */
+/* Circle styles */
+.circle1, .circle2, .circle3 {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.circle1 {
+    background-image: url('Book.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.circle2 {
+    background-image: url('robot.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.circle3 {
+    background-image: url('ProfileImage.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* App container */
 .app-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     width: 100vw;
     background-color: #2e3255;
     color: white;
+    margin-top: 60px; /* Add space to prevent overlap with the fixed header */
+    overflow: hidden; /* Prevents extra scrolling */
+    height: calc(100vh - 60px); /* Adjust height to take the full screen minus the header */
 }
-
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4c5077;
-    padding: 15px;
-    height: 60px;
-}
-
-    .header .circle {
-        width: 50px;
-        height: 50px;
-        background-color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-    }
 
 /* Chat Area */
 .chat-area {
@@ -45,29 +68,10 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-height: calc(100vh - 160px);
+    width: 100%; /* Ensure chat area fills the available width */
+    max-height: calc(100vh - 140px); /* Prevent overflow (subtract header + input area height) */
+    box-sizing: border-box; /* Ensures padding is within width */
 }
-
-    /* Chat Messages */
-    .chat-area .user, .chat-area .bot {
-        max-width: 75%;
-        padding: 12px;
-        border-radius: 10px;
-        margin: 5px;
-        word-wrap: break-word;
-    }
-
-    .chat-area .user {
-        background-color: #b0b0c5;
-        align-self: flex-end;
-        text-align: right;
-    }
-
-    .chat-area .bot {
-        background-color: #6f709e;
-        align-self: flex-start;
-        text-align: left;
-    }
 
 /* Input Area */
 .input-area {
@@ -76,31 +80,35 @@
     height: 80px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Align input and button */
+    justify-content: flex-start; /* Align to the left */
+    width: 100%; /* Ensure input area fills the width */
+    position: relative;
+    box-sizing: border-box; /* Prevents overflow */
 }
 
+/* Input field */
 input {
-    width: 85%; /* Adjust input width to leave space for the button */
+    flex-grow: 1; /* Let the input field grow to fill available space */
     padding: 12px;
     border-radius: 20px;
     border: none;
     outline: none;
-    text-align: center;
     background-color: #b0b0c5;
+    width:80%;
     color: black;
     font-size: 16px;
+    text-align: left; /* Text starts from the left */
+    margin-right: 60px; /* Give enough space for the send button */
 }
-
-    input:focus {
-        background-color: #c2c2d0;
-    }
 
 /* Send Button */
 .send-button {
     width: 40px;
     height: 40px;
-    background-color: #4c5077;
-    color: white;
+    background-image: url('/src/SendIcon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 50%;
     border: none;
     display: flex;
@@ -108,9 +116,10 @@ input {
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-left: 10px; /* Keep some space between the input and button */
-    position: absolute;
-    right: 10px; /* Position the button on the right side of the input */
+    position: absolute; /* Position send button within input area */
+    right: 10px; /* Fixed space from the right edge */
+    top: 50%;
+    transform: translateY(-50%); /* Center the button vertically */
 }
 
     .send-button:hover {
@@ -120,16 +129,25 @@ input {
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
     .input-area {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row; /* Ensure input and button stay aligned horizontally */
+        align-items: center; /* Vertically center the input and button */
+        padding: 10px 0;
+        
     }
 
+        /* Input field on mobile */
         .input-area input {
-            margin-right: 0;
-            margin-bottom: 10px;
+            width: 80%; /* Take full width minus space for the send button */
+             /* Remove margin-right on mobile */
         }
 
     .send-button {
-        margin-top: 10px;
+        width: 35px; /* Smaller button for mobile */
+        height: 35px;
+        margin-top: 0; /* Remove margin-top to align button properly */
+    }
+
+    .chat-area {
+        padding: 10px;
     }
 }
