@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import './Account.css'; // Reuse your rectangle styles
 import FullMock from './QuizPages/FullMock'; // Import FullMock component
 

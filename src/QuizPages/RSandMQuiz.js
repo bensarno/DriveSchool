@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import quizData from './Questions/RSandMQuizQuestions.json'; // Import the JSON file
 
 import '../Page3.css'; // Your custom styles
