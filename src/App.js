@@ -12,7 +12,7 @@ function App() {
     const [messages, setMessages] = useState([]);
     const [userInput, setUserInput] = useState("");
     const [currentPage, setCurrentPage] = useState("home");
-    const [user,setUser] = useState(null);
+    const [user, setUser] = useState(null);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isSignUp, setIsSignUp] = useState(false);
@@ -44,8 +44,6 @@ function App() {
         }
     };
 
-
-
     const sendMessage = async () => {
         if (userInput.trim() === "") return;
 
@@ -76,7 +74,7 @@ function App() {
         - Safe driving techniques in the UK
         - UK road markings
         - Rules for different types of roads (motorways, country lanes, etc.)
-        - Dont send overly long messages, just reply to the users question or inroduce yourself when they say hi`;
+        - Don't send overly long messages, just reply to the user's question or introduce yourself when they say hi`;
 
         const body = {
             messages: [
@@ -168,12 +166,26 @@ function App() {
         }
     };
 
+    const isSignInPage = !["page1", "page2", "page3"].includes(currentPage);  // Check if it's the sign-in page
+
     return (
         <div className="app-container">
             <div className="header">
-                <button onClick={() => handlePageChange("page1")} className="circle circle1"></button>
-                <button onClick={() => handlePageChange("page2")} className="circle circle2"></button>
-                <button onClick={() => handlePageChange("page3")} className="circle circle3"></button>
+                <button
+                    onClick={() => handlePageChange("page1")}
+                    className="circle circle1"
+                    disabled={isSignInPage}  // Disable button on sign-in page
+                />
+                <button
+                    onClick={() => handlePageChange("page2")}
+                    className="circle circle2"
+                    disabled={isSignInPage}  // Disable button on sign-in page
+                />
+                <button
+                    onClick={() => handlePageChange("page3")}
+                    className="circle circle3"
+                    disabled={isSignInPage}  // Disable button on sign-in page
+                />
             </div>
 
             {renderPage()}

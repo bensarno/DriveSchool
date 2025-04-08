@@ -41,7 +41,7 @@ function VHaMQuiz() {
                 return score + (q.answer === updatedAnswers[i] ? 1 : 0);
             }, 0);
 
-            saveScoreToFirestore("VHaMQ", finalScore, questions.length);
+            saveScoreToFirestore("VHaMQuiz", finalScore, questions.length);
         }
     };
 
