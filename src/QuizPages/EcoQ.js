@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import quizData from './Questions/EcoQQuestions.json'; // Import the JSON file
-
 import '../Page3.css'; // Your custom styles
+import { saveScoreToFirestore } from '../utils/saveScore';
+
 
 function EcoQ() {
     const [questions, setQuestions] = useState([]); // Holds the quiz data
@@ -40,16 +41,16 @@ function EcoQ() {
         } else {
             setIsQuizFinished(true);
 
-            // ⬇️ Save score and total to localStorage when quiz finishes
+            // ⬇️ Save score and total to Firestore when quiz finishes
             const finalScore = questions.reduce((score, q, i) => {
                 return score + (q.answer === updatedAnswers[i] ? 1 : 0);
             }, 0);
 
-            localStorage.setItem("EcoQ_Score", finalScore);
-            localStorage.setItem("EcoQ_Total", questions.length);
+            saveScoreToFirestore("EcoQ", finalScore, questions.length);
         }
     };
 
+    
 
     // Calculate the user's score
     const getScore = () => {

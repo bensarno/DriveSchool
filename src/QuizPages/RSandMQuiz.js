@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import quizData from './Questions/RSandMQuizQuestions.json'; // Import the JSON file
 
 import '../Page3.css'; // Your custom styles
-
+import { saveScoreToFirestore } from '../utils/saveScore';
 function RSandMQuiz() {
     const [questions, setQuestions] = useState([]); // Holds the quiz data
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Tracks current question index
@@ -40,16 +40,16 @@ function RSandMQuiz() {
         } else {
             setIsQuizFinished(true);
 
-            // ⬇️ Save score and total to localStorage when quiz finishes
+            // ⬇️ Save score and total to Firestore when quiz finishes
             const finalScore = questions.reduce((score, q, i) => {
                 return score + (q.answer === updatedAnswers[i] ? 1 : 0);
             }, 0);
 
-            localStorage.setItem("RSandMQuiz_Score", finalScore);
-            localStorage.setItem("RSandMQuiz_Total", questions.length);
+            saveScoreToFirestore("RSandMQuiz", finalScore, questions.length);
         }
     };
 
+    
 
     // Calculate the user's score
     const getScore = () => {
@@ -61,6 +61,7 @@ function RSandMQuiz() {
         });
         return score; // Return final score
     };
+
 
     // Generate feedback for each question
     const renderFeedback = () => {
@@ -76,6 +77,8 @@ function RSandMQuiz() {
             );
         });
     };
+
+
 
     if (loading) return <div className="page3-container">Loading questions...</div>; // Show loading state while fetching data
     if (error) return <div className="page3-container error">{error}</div>; // Handle errors

@@ -1,35 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import quizData from './Questions/VHaMQQuestions.json'; // Import the JSON file
+import quizData from './Questions/VHaMQQuestions.json';
+import { saveScoreToFirestore } from '../utils/saveScore';
 
-import '../Page3.css'; // Your custom styles
+
 
 function VHaMQuiz() {
-    const [questions, setQuestions] = useState([]); // Holds the quiz data
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Tracks current question index
-    const [selectedAnswers, setSelectedAnswers] = useState([]); // Stores user's answers
-    const [isQuizFinished, setIsQuizFinished] = useState(false); // Flag to show results after quiz ends
-    const [loading, setLoading] = useState(true); // Loading state while questions are being "fetched"
-    const [error, setError] = useState(""); // Error handling
+    const [questions, setQuestions] = useState([]);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [selectedAnswers, setSelectedAnswers] = useState([]);
+    const [isQuizFinished, setIsQuizFinished] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState("");
 
-    // Function to get 10 random questions from quizData
     const getRandomQuestions = (data, num) => {
-        const shuffled = [...data].sort(() => Math.random() - 0.5); // Shuffle questions randomly
-        return shuffled.slice(0, num); // Pick the first `num` questions
+        const shuffled = [...data].sort(() => Math.random() - 0.5);
+        return shuffled.slice(0, num);
     };
 
-    // Simulate loading of 10 random questions from the JSON file
     useEffect(() => {
         if (quizData && quizData.length > 0) {
-            const randomQuestions = getRandomQuestions(quizData, 10); // Get 10 random questions
-            setQuestions(randomQuestions); // Set the loaded questions
-            setLoading(false); // Turn off loading state once data is loaded
+            const randomQuestions = getRandomQuestions(quizData, 10);
+            setQuestions(randomQuestions);
+            setLoading(false);
         } else {
             setError('No quiz data available.');
-            setLoading(false); // Set loading state to false if no data is available
+            setLoading(false);
         }
-    }, []); // Empty dependency array ensures this runs only once when the component mounts
+    }, []);
 
-    // Handle user's answer selection
     const handleAnswer = (answer) => {
         const updatedAnswers = [...selectedAnswers, answer];
         setSelectedAnswers(updatedAnswers);
@@ -39,34 +37,27 @@ function VHaMQuiz() {
             setCurrentQuestionIndex(nextIndex);
         } else {
             setIsQuizFinished(true);
-
-            // ⬇️ Save score and total to localStorage when quiz finishes
             const finalScore = questions.reduce((score, q, i) => {
                 return score + (q.answer === updatedAnswers[i] ? 1 : 0);
             }, 0);
 
-            localStorage.setItem("VHaMQuiz_Score", finalScore);
-            localStorage.setItem("VHaMQuiz_Total", questions.length);
+            saveScoreToFirestore("VHaMQ", finalScore, questions.length);
         }
     };
 
+    
+    
 
-    // Calculate the user's score
     const getScore = () => {
-        let score = 0;
-        questions.forEach((q, i) => {
-            if (q.answer === selectedAnswers[i]) {
-                score++; // Increment score for each correct answer
-            }
-        });
-        return score; // Return final score
+        return questions.reduce((score, q, i) => {
+            return score + (q.answer === selectedAnswers[i] ? 1 : 0);
+        }, 0);
     };
 
-    // Generate feedback for each question
     const renderFeedback = () => {
         return questions.map((q, i) => {
             const userAnswer = selectedAnswers[i];
-            const correct = q.answer === userAnswer; // Check if the answer is correct
+            const correct = q.answer === userAnswer;
             return (
                 <div key={i} style={{ marginBottom: "1em" }}>
                     <strong>Q{i + 1}: {q.question}</strong><br />
@@ -77,13 +68,9 @@ function VHaMQuiz() {
         });
     };
 
-    if (loading) return <div className="page3-container">Loading questions...</div>; // Show loading state while fetching data
-    if (error) return <div className="page3-container error">{error}</div>; // Handle errors
-
-    // Ensure we have questions and they are loaded properly
-    if (questions.length === 0) {
-        return <div className="page3-container">No questions available.</div>;
-    }
+    if (loading) return <div className="page3-container">Loading questions...</div>;
+    if (error) return <div className="page3-container error">{error}</div>;
+    if (questions.length === 0) return <div className="page3-container">No questions available.</div>;
 
     return (
         <div className="page3-container">

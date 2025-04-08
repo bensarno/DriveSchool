@@ -1,27 +1,84 @@
 /* Full-width header */
 .header {
     width: 100%; /* Full width of the viewport */
-    background-color: #4c5077;
+    background-color: #368364;
     display: flex;
     justify-content: space-between; /* Evenly space out the circles */
     align-items: center;
     padding: 15px;
-    height: 60px;
+    height: 70px;
     color: white;
     position: fixed; /* Keep header fixed at the top */
     top: 0;
     left: 0;
     z-index: 10; /* Ensure header stays on top */
     box-sizing: border-box; /* Ensure padding is included in the width */
+    border-style: solid;
+    border-color: #31634f;
 }
+.HomeTitle {
+    display: flex;
+    border-style: solid;
+    border-width: 2px;
+    font-size: 20px;
+    flex-direction: column; /* Arrange the rectangles vertically */ /* Allow vertical scroll */
+    gap: 30%; /* Space between rectangles */
+    padding-bottom: 10%; /* Optional padding for scroll */
+    max-height: 80vh; /* Optional: restrict container height */
+    align-items: center;
+    background-color: #f4a460;
+    border-radius: 5%;
+    width: 80%;
+    align-self: center;
+    margin-top: 30%;
+    height: 20%;
+    padding: 5%;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    align-self: center;
+}
+
+    .auth-form input {
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        align-self: center;
+    }
+
+    .auth-form button {
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        align-self: center;
+    }
+
+        .auth-form button:hover {
+            background-color: #45a049;
+        }
+
+
+
 
 /* Circle styles */
 .circle1, .circle2, .circle3 {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    border-width:3px;
-    border-color: black;
+    border:solid;
+    border-radius: 15px;
+
+   
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,24 +86,27 @@
 }
 
 .circle1 {
-    background-image: url('Book.png');
+    background-image: url('Test.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: #368364;
 }
 
 .circle2 {
-    background-image: url('HomeIcon.png');
+    background-image: url('HomeIcon4.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: #368364;
 }
 
 .circle3 {
-    background-image: url('ProfileImage.png');
+    background-image: url('Settings.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: #368364;
 }
 
 /* App container */
@@ -54,7 +114,7 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    background-color: #2e3255;
+    background-color: #FFFDD0;
     color: white;
     margin-top: 60px; /* Add space to prevent overlap with the fixed header */
     overflow: hidden; /* Prevents extra scrolling */
@@ -64,6 +124,7 @@
 /* Chat Area */
 .chat-area {
     flex-grow: 1;
+    color: black;
     padding: 20px;
     overflow-y: auto;
     display: flex;
@@ -76,7 +137,9 @@
 
 /* Input Area */
 .input-area {
-    background-color: #4c5077;
+    background-color: #368364;
+    border-style: solid;
+    border-color: #31634f;
     padding: 15px;
     height: 80px;
     display: flex;
@@ -94,8 +157,8 @@ input {
     border-radius: 20px;
     border: none;
     outline: none;
-    background-color: #b0b0c5;
-    width:80%;
+    background-color: #4d9a7b;
+    width: 80%;
     color: black;
     font-size: 16px;
     text-align: left; /* Text starts from the left */

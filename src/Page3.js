@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import './Account.css'; // Reuse your rectangle styles
-import FullMock from './QuizPages/FullMock'; // Import FullMock component
+import React, { useState, useEffect } from 'react';
+import './Account.css';
+import FullMock from './QuizPages/FullMock';
+import { db, auth } from './firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 const quizTitles = {
     FullMock: "Full Mock Test",
@@ -11,34 +13,49 @@ const quizTitles = {
     WaRCQ: "Weather and Road Conditions",
     EcoQ: "Eco Driving",
     FAandESQ: "First Aid and Emergency Situations",
-    
 };
 
 function QuizScores() {
-    const [currentView, setCurrentView] = useState('home'); // State to control the view (home or fullmock)
+    const [currentView, setCurrentView] = useState('home');
+    const [scores, setScores] = useState({});
+    const [loading, setLoading] = useState(true);
 
-    const scores = Object.keys(quizTitles).map((key) => {
-        const score = localStorage.getItem(`${key}_Score`);
-        const total = localStorage.getItem(`${key}_Total`);
-        return {
-            key,
-            title: quizTitles[key],
-            score: score !== null ? `${score} / ${total}` : "Not Attempted",
+    useEffect(() => {
+        const fetchScores = async () => {
+            if (!auth.currentUser) {
+                console.error("User not authenticated");
+                setLoading(false);
+                return;
+            }
+
+            try {
+                const userRef = doc(db, "quizScores", auth.currentUser.uid);
+                const docSnap = await getDoc(userRef);
+
+                if (docSnap.exists()) {
+                    setScores(docSnap.data());
+                } else {
+                    console.log("No score data found for this user.");
+                }
+            } catch (err) {
+                console.error("Error fetching quiz scores:", err);
+            } finally {
+                setLoading(false);
+            }
         };
-    });
 
-    // Function to handle showing the FullMock component
+        fetchScores();
+    }, []);
+
     const handleFullMockClick = () => {
-        setCurrentView('FullMock'); // Change view to 'fullmock'
+        setCurrentView('FullMock');
     };
 
-    // Switch statement to render content based on the currentView state
     const renderContent = () => {
         switch (currentView) {
             case 'home':
                 return (
                     <div className="page1-container">
-                        {/* 🚗 Full Mock Test Button */}
                         <button
                             onClick={handleFullMockClick}
                             className="rectanglmock-button"
@@ -49,20 +66,61 @@ function QuizScores() {
 
                         <h1 className="page1-header">Your Last Scores</h1>
 
-                        <div className="scroll-container">
-                            {scores.map(({ key, title, score }) => (
-                                <div key={key} className="rectangle">
-                                    <strong>{title}</strong><br />
-                                    <span className="score-line">Last Score: {score}</span>
+                        {loading ? (
+                            <div>Loading scores...</div>
+                        ) : (
+                                <div className="scroll-container">
+
+
+
+
+
+                                {Object.keys(quizTitles).map((key) => {
+                                    const quizData = scores[key];
+                                    const scoreText = quizData
+                                        ? `${quizData.score} / ${quizData.total}`
+                                        : "Not Attempted";
+
+                                    return (
+                                        <div key={key} className="rectangle">
+                                            <strong>{quizTitles[key]}</strong><br />
+                                            <span className="score-line">Last Score: {scoreText}</span>
+                                        </div>
+                                    );
+                                })}
+
+                                {/* 🚪 Sign Out Button inside scrollable container */}
+                                <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+                                    <button
+                                        onClick={async () => {
+                                            try {
+                                                await auth.signOut();
+                                                window.location.reload(); // Reset app after sign-out
+                                            } catch (err) {
+                                                console.error("Error signing out:", err);
+                                            }
+                                        }}
+                                        className="rectanglmock-button"
+                                        style={{
+                                            backgroundColor: '#ff4d4f',
+                                            color: 'white',
+                                            padding: '0.5rem 1rem',
+                                            border: 'none',
+                                            borderRadius: '8px',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        🚪 Sign Out
+                                    </button>
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        )}
                     </div>
                 );
             case 'FullMock':
-                return <FullMock />; // Show the FullMock component when currentView is 'fullmock'
+                return <FullMock />;
             default:
-                return <div>Page Not Found</div>; // In case of an unexpected view state
+                return <div>Page Not Found</div>;
         }
     };
 

@@ -1,12 +1,17 @@
 .page1-container {
     padding: 10px; /* Reduce the padding to bring the title closer to the top */
     text-align: center;
+    color:black;
+}
+.option-btn{
+   
 }
 
 .page1-header {
     font-size: 24px;
     margin-top: 10px; /* Move the header closer to the top */
     margin-bottom: 20px; /* Keep space below the header */
+    color: black;
 }
 
 /* Scroll container to enable vertical scrolling */
@@ -25,7 +30,7 @@
     width: 80%; /* Set width of each rectangle */
     height: 100px; /* Set height of each rectangle */
     background-color: #4c5077; /* Rectangle color */
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;

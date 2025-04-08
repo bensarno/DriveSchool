@@ -5,19 +5,21 @@
     margin: 0 auto;
 }
 .rectanglmock-button {
-    background-color: #4c5077;
-    border: 1px solid #ccc;
+    background-color: #368364;
+    border: 1px solid;
+    border-color: #31634f;
     border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 12px;
     font-size: 1rem;
     color: white;
+    padding:16px;
+    margin-top: 3%;
 }
 .score-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 20px;
+
 }
 
 .quiz-title {
@@ -27,30 +29,35 @@
 
 .quiz-score {
     font-size: 1rem;
-    color: #white;
+    color:#FFFDD0;
 }
 
 
 .scroll-container {
-    max-height: 550px;           
+    max-height: 550px;
     overflow-y: auto;
     max-width: 100%;
     padding: 5px;
-    background-color: #2e3255;
+    background-color: #FFFDD0;
 }
 .rectangle {
-    background-color: #4c5077;
-    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between ;
+    background-color: #368364;
+    border: 1px solid;
+    border-color: #31634f;
     border-radius: 12px;
     padding: 16px;
     margin-bottom: 12px;
     font-size: 1rem;
+    color: #f1f1f1;
 }
 
 
-.page3-header {
+.page1-header {
     font-size: 28px;
     margin-bottom: 20px;
+    color: black;
 }
 
 .quiz-question {

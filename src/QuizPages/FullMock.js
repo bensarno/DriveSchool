@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import quizData from './Questions/FullMockQuestions.json'        
+import quizData from './Questions/FullMockQuestions.json'; // Import the JSON file
+import { saveScoreToFirestore } from '../utils/saveScore';
 
 import '../Page3.css'; // Your custom styles
 
 function FullMock() {
-
     const [questions, setQuestions] = useState([]); // Holds the quiz data
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Tracks current question index
     const [selectedAnswers, setSelectedAnswers] = useState([]); // Stores user's answers
@@ -30,6 +30,8 @@ function FullMock() {
         }
     }, []); // Empty dependency array ensures this runs only once when the component mounts
 
+    
+
     // Handle user's answer selection
     const handleAnswer = (answer) => {
         const updatedAnswers = [...selectedAnswers, answer];
@@ -41,13 +43,12 @@ function FullMock() {
         } else {
             setIsQuizFinished(true);
 
-            // ⬇️ Save score and total to localStorage when quiz finishes
             const finalScore = questions.reduce((score, q, i) => {
                 return score + (q.answer === updatedAnswers[i] ? 1 : 0);
             }, 0);
 
-            localStorage.setItem("FullMock_Score", finalScore);
-            localStorage.setItem("FullMock_Total", questions.length);
+            // Save score to Firebase Firestore
+            saveScoreToFirestore("FullMock", finalScore, questions.length);
         }
     };
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import quizData from './Questions/RoRQuizQuestions.json'; // Import the JSON file
-
 import '../Page3.css'; // Your custom styles
+import { saveScoreToFirestore } from '../utils/saveScore';
 
 function RoRQuiz() {
     const [questions, setQuestions] = useState([]); // Holds the quiz data
@@ -29,6 +29,8 @@ function RoRQuiz() {
         }
     }, []); // Empty dependency array ensures this runs only once when the component mounts
 
+    
+
     // Handle user's answer selection
     const handleAnswer = (answer) => {
         const updatedAnswers = [...selectedAnswers, answer];
@@ -40,16 +42,14 @@ function RoRQuiz() {
         } else {
             setIsQuizFinished(true);
 
-            // ⬇️ Save score and total to localStorage when quiz finishes
             const finalScore = questions.reduce((score, q, i) => {
                 return score + (q.answer === updatedAnswers[i] ? 1 : 0);
             }, 0);
 
-            localStorage.setItem("RoRQuiz_Score", finalScore);
-            localStorage.setItem("RoRQuiz_Total", questions.length);
+            // Save score to Firebase Firestore
+            saveScoreToFirestore("RoRQuiz", finalScore, questions.length);
         }
     };
-
 
     // Calculate the user's score
     const getScore = () => {
