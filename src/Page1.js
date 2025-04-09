@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Page1.css'; // Import your shared CSS file
+import './Page1.css';
 
 import RSandMQuiz from './QuizPages/RSandMQuiz';
 import RoRQuiz from "./QuizPages/RoRQuiz";
@@ -7,34 +7,38 @@ import VHaMQuiz from "./QuizPages/VHaMQuiz";
 import SaLRQ from "./QuizPages/SaLRQ";
 import WaRCQ from "./QuizPages/WaRCQ";
 import EcoQ from "./QuizPages/EcoQ";
-import FAandESQ from "./QuizPages/FAandESQ";
+import FAandESQ from './QuizPages/FAandESQ';
 import FullMock from './QuizPages/FullMock';
 
-function BlankPage() {
-    const [currentPage, setCurrentPage] = useState(null); // Start with null
+function BlankPage({ onQuizFeedback, onReturnToMain }) {
+    const [currentPage, setCurrentPage] = useState(null);
 
     const handlePageChange = (page) => {
         setCurrentPage(page);
     };
 
+    console.log('Current Page:', currentPage);
+    console.log('onQuizFeedback:', onQuizFeedback);
+    console.log('onReturnToMain:', onReturnToMain);
+
     const renderPage = () => {
         switch (currentPage) {
             case "RSandMQuiz":
-                return <RSandMQuiz />;
+                return <RSandMQuiz onQuizFeedback={onQuizFeedback} onReturnToMain={onReturnToMain} />;
             case "RoRQuiz":
-                return <RoRQuiz />;
+                return <RoRQuiz onQuizFeedback={onQuizFeedback} onReturnToMain={onReturnToMain} />;
             case "VHaMQuiz":
-                return <VHaMQuiz />;
+                return <VHaMQuiz onQuizFeedback={onQuizFeedback} onReturnToMain={onReturnToMain} />;
             case "SaLRQ":
-                return <SaLRQ />;
+                return <SaLRQ onQuizFeedback={onQuizFeedback} onReturnToMain={onReturnToMain} />;
             case "WaRCQ":
-                return <WaRCQ />;
+                return <WaRCQ onQuizFeedback={onQuizFeedback} onReturnToMain={onReturnToMain} />;
             case "EcoQ":
-                return <EcoQ />;
+                return <EcoQ onQuizFeedback={onQuizFeedback} onReturnToMain={onReturnToMain} />;
             case "FAandESQ":
-                return <FAandESQ />;
+                return <FAandESQ onQuizFeedback={onQuizFeedback} onReturnToMain={onReturnToMain} />;
             case "FullMock":
-                return <FullMock />;
+                return <FullMock onQuizFeedback={onQuizFeedback} onReturnToMain={onReturnToMain} />;
             default:
                 return (
                     <div className="scroll-container">

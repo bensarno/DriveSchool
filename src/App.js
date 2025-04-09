@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 import axios from "axios";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from './firebase';
+import { auth } from "./firebase";
+import { sendPasswordResetEmail } from "firebase/auth";
 
-// Import the newly created Page1 and Page3 components
-import Page1 from './Page1';
-import Page3 from './Page3';
+// Import components
+import Page1 from "./Page1";
+import Page3 from "./Page3";
+
+// Import the audio files
+import pop2 from "./SoundEffects/pop2.mp3";
+import pop3 from "./SoundEffects/pop3.mp3";
 
 function App() {
     const [messages, setMessages] = useState([]);
@@ -16,6 +21,18 @@ function App() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isSignUp, setIsSignUp] = useState(false);
+
+    console.log("pop2:", pop2);
+    console.log("pop3:", pop3);
+
+    // Create Audio objects using useRef, with imported audio files.
+    const messageSentAudioRef = useRef(new Audio(pop2));
+    const messageReceivedAudioRef = useRef(new Audio(pop3));
+
+    // Clear chat function: resets messages to an empty array.
+    const clearChat = () => {
+        setMessages([]);
+    };
 
     const handleSignUp = async () => {
         try {
@@ -28,6 +45,76 @@ function App() {
             console.error("Error signing up:", error.message);
             alert(error.message);
         }
+    };
+
+    const handleForgotPassword = async () => {
+        const emailPrompt = prompt("Please enter your email address for password reset:");
+        if (!emailPrompt) return;
+
+        try {
+            await sendPasswordResetEmail(auth, emailPrompt);
+            alert("Password reset email sent! Check your inbox.");
+        } catch (error) {
+            console.error("Password reset error:", error.message);
+            alert("Error sending password reset email: " + error.message);
+        }
+    };
+
+
+    const sendQuizSummaryToAI = async (summary) => {
+        // Play sent sound before making request
+        messageSentAudioRef.current.play();
+
+        const botResponse = await getCohereResponse(summary);
+        setMessages((prev) => [
+            ...prev,
+            { role: "user", content: summary },
+            { role: "bot", content: botResponse },
+        ]);
+
+        // Play received sound after response is received
+        messageReceivedAudioRef.current.play();
+    };
+
+    const splitIntoChunks = (text, maxChars) => {
+        const parts = [];
+        let start = 0;
+
+        while (start < text.length) {
+            let end = start + maxChars;
+            if (end < text.length) {
+                const lastPeriod = text.lastIndexOf(".", end);
+                if (lastPeriod > start) end = lastPeriod + 1;
+            }
+            parts.push(text.slice(start, end).trim());
+            start = end;
+        }
+
+        return parts;
+    };
+
+    const handleQuizFeedback = async (summary, options = { showUserMessage: true }) => {
+        const chunks = splitIntoChunks(summary, 1000);
+        let fullResponse = "";
+
+        for (const chunk of chunks) {
+            try {
+                const response = await getCohereResponse(chunk);
+                fullResponse += response + "\n\n";
+            } catch (error) {
+                console.error("Error getting AI feedback:", error);
+                fullResponse += "\n\n[Error generating feedback for one of the sections]";
+            }
+        }
+
+        setMessages((prev) => {
+            const newMessages = [...prev];
+            if (options.showUserMessage) {
+                newMessages.push({ role: "user", content: summary });
+            }
+            newMessages.push({ role: "bot", content: fullResponse.trim() });
+            return newMessages;
+        });
     };
 
     const handleSignIn = async () => {
@@ -47,6 +134,9 @@ function App() {
     const sendMessage = async () => {
         if (userInput.trim() === "") return;
 
+        // Play message sent sound
+        messageSentAudioRef.current.play();
+
         const newMessages = [...messages, { role: "user", content: userInput }];
         setMessages(newMessages);
         setUserInput("");
@@ -54,11 +144,12 @@ function App() {
         const botResponse = await getCohereResponse(userInput);
 
         setMessages([...newMessages, { role: "bot", content: botResponse }]);
+        // Play message received sound
+        messageReceivedAudioRef.current.play();
     };
 
     const getCohereResponse = async (input) => {
         if (!input.trim()) return "Please provide a valid message.";
-
         const apiKey = process.env.REACT_APP_COHERE_API_KEY;
         const apiUrl = "https://api.cohere.com/v2/chat";
 
@@ -67,14 +158,12 @@ function App() {
             "Content-Type": "application/json",
         };
 
-        const instruction = `You are a driving instructor in the UK. Please only respond with information related to UK driving theory, such as:
-        - UK traffic rules
-        - UK road signs and their meanings
-        - Rules for passing the UK driving test
-        - Safe driving techniques in the UK
-        - UK road markings
-        - Rules for different types of roads (motorways, country lanes, etc.)
-        - Don't send overly long messages, just reply to the user's question or introduce yourself when they say hi`;
+        const instruction = `
+  You are a driving instructor in the UK.
+  Provide concise, bullet-point feedback when addressing a question.
+  Limit your response to a maximum of three sentences or 100 words.
+  Only provide information related to UK driving theory, such as UK traffic rules, road signs, and safe driving techniques.
+    `;
 
         const body = {
             messages: [
@@ -82,14 +171,20 @@ function App() {
                 { role: "user", content: input },
             ],
             model: "command",
-            max_tokens: 200,
+            max_tokens: 300,
         };
 
         try {
             const response = await axios.post(apiUrl, body, { headers });
-
-            if (response.data && response.data.message && response.data.message.content && response.data.message.content.length > 0) {
-                const botMessage = response.data.message.content[0].text || response.data.message.content[0];
+            if (
+                response.data &&
+                response.data.message &&
+                response.data.message.content &&
+                response.data.message.content.length > 0
+            ) {
+                const botMessage =
+                    response.data.message.content[0].text ||
+                    response.data.message.content[0];
                 return botMessage;
             } else {
                 return "Sorry, I didn't get a valid response from the AI.";
@@ -107,7 +202,12 @@ function App() {
     const renderPage = () => {
         switch (currentPage) {
             case "page1":
-                return <Page1 />;
+                return (
+                    <Page1
+                        onQuizFeedback={handleQuizFeedback}
+                        onReturnToMain={() => setCurrentPage("page2")}
+                    />
+                );
             case "page2":
                 return (
                     <>
@@ -118,7 +218,23 @@ function App() {
                                 </div>
                             ))}
                         </div>
-
+                        {/* Clear Chat Button */}
+                        <div className="clear-chat-container">
+                            <button
+                                onClick={clearChat}
+                                style={{
+                                    backgroundColor: "#ff4d4f",
+                                    color: "#fff",
+                                    padding: "10px 20px",
+                                    border: "none",
+                                    borderRadius: "5px",
+                                    cursor: "pointer",
+                                    margin: "10px"
+                                }}
+                            >
+                                Clear Chat
+                            </button>
+                        </div>
                         <div className="input-area">
                             <input
                                 type="text"
@@ -131,13 +247,12 @@ function App() {
                     </>
                 );
             case "page3":
-                return <Page3 />;
+                return <Page3 onQuizFeedback={sendQuizSummaryToAI} setCurrentPage={setCurrentPage} />;
             default:
                 return (
                     <div className="HomeTitle">
                         <div>Welcome to DriveSchool</div>
                         <div>Sign in to get started</div>
-
                         <div className="auth-form">
                             <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
                             <input
@@ -152,21 +267,23 @@ function App() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-
                             <button onClick={isSignUp ? handleSignUp : handleSignIn}>
                                 {isSignUp ? "Sign Up" : "Sign In"}
                             </button>
-
                             <button onClick={() => setIsSignUp(!isSignUp)}>
                                 {isSignUp ? "Already have an account? Sign In" : "Don't have an account? Sign Up"}
                             </button>
+                            <button onClick={handleForgotPassword} style={{ marginTop: "10px", background: "none", border: "none", color: "#007bff", cursor: "pointer" }}>
+                                Forgot Password?
+                            </button>
+
                         </div>
                     </div>
                 );
         }
     };
 
-    const isSignInPage = !["page1", "page2", "page3"].includes(currentPage);  // Check if it's the sign-in page
+    const isSignInPage = !["page1", "page2", "page3"].includes(currentPage);
 
     return (
         <div className="app-container">
@@ -174,20 +291,19 @@ function App() {
                 <button
                     onClick={() => handlePageChange("page1")}
                     className="circle circle1"
-                    disabled={isSignInPage}  // Disable button on sign-in page
+                    disabled={isSignInPage}
                 />
                 <button
                     onClick={() => handlePageChange("page2")}
                     className="circle circle2"
-                    disabled={isSignInPage}  // Disable button on sign-in page
+                    disabled={isSignInPage}
                 />
                 <button
                     onClick={() => handlePageChange("page3")}
                     className="circle circle3"
-                    disabled={isSignInPage}  // Disable button on sign-in page
+                    disabled={isSignInPage}
                 />
             </div>
-
             {renderPage()}
         </div>
     );
