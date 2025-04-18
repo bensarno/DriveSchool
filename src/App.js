@@ -252,7 +252,8 @@ function App() {
                 return (
                     <div className="HomeTitle">
                         <div>Welcome to DriveSchool</div>
-                        <div>Sign in to get started</div>
+                        <div>This app works better when added to home screen</div>
+                        <div>There is a feedback form in the settings page for user feedback</div>
                         <div className="auth-form">
                             <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
                             <input

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import quizData from './Questions/RSandMQuizQuestions.json'; // Import the JSON file
-import '../Page3.css'; // Your custom styles
+import quizData from './Questions/RSandMQuizQuestions.json'; // Import quiz JSON
+import '../Page3.css'; // Custom styles
 import { saveScoreToFirestore } from '../utils/saveScore';
 
 function RSandMQuiz({ onQuizFeedback, onReturnToMain }) {
-    const [questions, setQuestions] = useState([]); // Holds the quiz data
+    const [questions, setQuestions] = useState([]); // Holds quiz data
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // Tracks current question index
     const [selectedAnswers, setSelectedAnswers] = useState([]); // Stores user's answers
-    const [isQuizFinished, setIsQuizFinished] = useState(false); // Flag to indicate end of quiz
+    const [isQuizFinished, setIsQuizFinished] = useState(false); // Flag indicating quiz completion
     const [loading, setLoading] = useState(true); // Loading state while questions load
     const [error, setError] = useState(""); // Error message if any
 
@@ -17,15 +17,13 @@ function RSandMQuiz({ onQuizFeedback, onReturnToMain }) {
 
     // Function to get 10 random questions from quizData
     const getRandomQuestions = (data, num) => {
-        const shuffled = [...data].sort(() => Math.random() - 0.5);
-        return shuffled.slice(0, num);
+        return [...data].sort(() => Math.random() - 0.5).slice(0, num);
     };
 
     // Load questions once the component mounts
     useEffect(() => {
         if (quizData && quizData.length > 0) {
-            const randomQuestions = getRandomQuestions(quizData, 10);
-            setQuestions(randomQuestions);
+            setQuestions(getRandomQuestions(quizData, 10));
             setLoading(false);
         } else {
             setError("No quiz data available.");
@@ -35,31 +33,24 @@ function RSandMQuiz({ onQuizFeedback, onReturnToMain }) {
 
     // Handle user's answer selection
     const handleAnswer = (answer) => {
-        const updatedAnswers = [...selectedAnswers, answer];
-        setSelectedAnswers(updatedAnswers);
+        setSelectedAnswers([...selectedAnswers, answer]);
         const nextIndex = currentQuestionIndex + 1;
         if (nextIndex < questions.length) {
             setCurrentQuestionIndex(nextIndex);
         } else {
             setIsQuizFinished(true);
-            const finalScore = questions.reduce((score, q, i) => {
-                return score + (q.answer === updatedAnswers[i] ? 1 : 0);
-            }, 0);
-            // Save score to Firestore
+            const finalScore = questions.reduce((score, q, i) => (
+                score + (q.answer === selectedAnswers[i] ? 1 : 0)
+            ), 0);
             saveScoreToFirestore("RSandMQuiz", finalScore, questions.length);
-            // Feedback is triggered manually.
         }
     };
 
     // Calculate the user's score
     const getScore = () => {
-        let score = 0;
-        questions.forEach((q, i) => {
-            if (q.answer === selectedAnswers[i]) {
-                score++;
-            }
-        });
-        return score;
+        return questions.reduce((score, q, i) => (
+            score + (q.answer === selectedAnswers[i] ? 1 : 0)
+        ), 0);
     };
 
     // Generate visual feedback for each question
@@ -80,49 +71,36 @@ function RSandMQuiz({ onQuizFeedback, onReturnToMain }) {
         });
     };
 
-    // Handle manual feedback button click
+    // Handle AI feedback request
     const handleSendFeedbackManually = async () => {
         console.log("Feedback button clicked.");
         setFeedbackLoading(true);
 
-        // Build summary using only wrong answers
+        // Build summary using only wrong answers, properly formatted
         const wrongSummary = questions
             .map((q, i) => {
                 if (q.answer !== selectedAnswers[i]) {
-                    return `Q${i + 1}: ${q.question}\nYour Answer: ${selectedAnswers[i]}\nCorrect Answer: ${q.answer}`;
+                    return `Question ${i + 1}:\n- Error: ${selectedAnswers[i]} is incorrect.\n- Correct Answer: ${q.answer}.`;
                 }
                 return null;
             })
             .filter((item) => item !== null)
-            .join("\n\n");
+            .join("\n\n"); // Separate each feedback into its own paragraph
 
         const summaryText =
-            `I completed the UK Road Safety and Markings Quiz. My score was ${getScore()} out of ${questions.length}.\n\n` +
+            `I completed the UK Road Safety and Markings Quiz.\nMy score: ${getScore()} out of ${questions.length}.\n\n give me a breif description of where i went wrong, only use one sentence for each question. do not elaborate further or give any other bonus tips.` +
             (wrongSummary ? `Mistakes:\n\n${wrongSummary}` : "I answered all questions correctly.");
 
-        // Define the feedback prompt
-        const feedbackPrompt = (chunk) => `
-You are a succinct AI tutor.
-Only provide feedback for wrong answers.
-For each wrong answer, provide exactly two sentences:
-1. A sentence (max 12 words) explaining the error.
-2. A sentence (max 12 words) offering one practical tip.
-Do not mention correct answers or include extra details.
-Keep the response under 30 words. Ensure you finish your final sentence completely.
-Quiz summary:
-${chunk}
-`;
-        const summary = feedbackPrompt(summaryText);
-        console.log("Summary built:", summary);
+        console.log("Summary built:", summaryText);
 
         if (!onQuizFeedback) {
-            console.error("onQuizFeedback is not defined. Please pass a valid feedback function as a prop.");
+            console.error("onQuizFeedback is not defined.");
             setAiFeedback("No AI feedback function provided.");
             setFeedbackLoading(false);
             return;
         }
 
-        // If no mistakes, set minimal feedback and redirect immediately.
+        // If all answers are correct, provide basic feedback
         if (!wrongSummary) {
             setAiFeedback("Great job! You answered all questions correctly.");
             setFeedbackLoading(false);
@@ -131,18 +109,17 @@ ${chunk}
         }
 
         try {
-            const feedback = await onQuizFeedback(summary, { showUserMessage: false });
+            const feedback = await onQuizFeedback(summaryText, { showUserMessage: false });
             console.log("Received AI feedback:", feedback);
-            setAiFeedback(feedback);
+            setAiFeedback(feedback.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>)); // Ensure proper formatting
         } catch (err) {
             console.error("Error retrieving AI feedback:", err);
             setAiFeedback("There was an error retrieving AI feedback.");
         }
+
         setFeedbackLoading(false);
 
-        if (onReturnToMain) {
-            onReturnToMain();
-        }
+        if (onReturnToMain) onReturnToMain();
     };
 
     if (loading) return <div className="page3-container">Loading questions...</div>;
@@ -158,11 +135,7 @@ ${chunk}
                     <p>{questions[currentQuestionIndex].question}</p>
                     <div className="options">
                         {questions[currentQuestionIndex].options.map((opt, idx) => (
-                            <button
-                                key={idx}
-                                className="option-btn"
-                                onClick={() => handleAnswer(opt)}
-                            >
+                            <button key={idx} className="option-btn" onClick={() => handleAnswer(opt)}>
                                 {opt}
                             </button>
                         ))}
@@ -174,17 +147,13 @@ ${chunk}
                     <p>Percentage: {(getScore() / questions.length * 100).toFixed(1)}%</p>
                     <h3>Feedback:</h3>
                     <div className="feedback-scroll">{renderFeedback()}</div>
-                    <button
-                        className="option-btn"
-                        style={{ marginTop: "1em" }}
-                        onClick={handleSendFeedbackManually}
-                    >
+                    <button className="option-btn" style={{ marginTop: "1em" }} onClick={handleSendFeedbackManually}>
                         {feedbackLoading ? "Loading Feedback..." : "Get More AI Feedback"}
                     </button>
                     {aiFeedback && (
                         <div className="ai-feedback" style={{ marginTop: "1em" }}>
                             <h4>AI Feedback:</h4>
-                            <p>{aiFeedback}</p>
+                            {aiFeedback}
                         </div>
                     )}
                 </div>

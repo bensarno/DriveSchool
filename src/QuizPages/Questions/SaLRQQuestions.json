@@ -10,12 +10,12 @@
         "answer": "1.6mm"
     },
     {
-        "question": "What should you do if you�re involved in an accident, even if it's minor?",
+        "question": "What should you do if you're involved in an accident, even if it's minor?",
         "options": [
             "Leave the scene immediately",
             "Exchange details with the other party and report it to the police if necessary",
             "Only exchange details with the police",
-            "Drive off if there�s no damage"
+            "Drive off if there's no damage"
         ],
         "answer": "Exchange details with the other party and report it to the police if necessary"
     },
@@ -122,12 +122,12 @@
     {
         "question": "What must you do before overtaking another vehicle?",
         "options": [
-            "Make sure it�s safe, check mirrors, and signal your intent",
+            "Make sure it's safe, check mirrors, and signal your intent",
             "Accelerate quickly",
-            "Only signal once you�ve overtaken",
+            "Only signal once you've overtaken",
             "Honk the horn to alert the driver"
         ],
-        "answer": "Make sure it�s safe, check mirrors, and signal your intent"
+        "answer": "Make sure it's safe, check mirrors, and signal your intent"
     },
     {
         "question": "When must you stop for a school crossing patrol?",
@@ -150,7 +150,7 @@
         "answer": "To fund road maintenance and other transport-related infrastructure"
     },
     {
-        "question": "What should you do if your vehicle�s brake lights fail while driving?",
+        "question": "What should you do if your vehicle's brake lights fail while driving?",
         "options": [
             "Use hand signals to indicate stopping or slowing down",
             "Continue driving and fix it later",
@@ -170,7 +170,7 @@
         "answer": "70 mph"
     },
     {
-        "question": "What does the �congestion charge� apply to?",
+        "question": "What does the 'congestion charge' apply to?",
         "options": [
             "Only petrol vehicles",
             "Only diesel vehicles",
@@ -212,7 +212,7 @@
     {
         "question": "What should you do if you are caught by a speed camera?",
         "options": [
-            "Ignore the notice if you believe it�s wrong",
+            "Ignore the notice if you believe it's wrong",
             "Wait for a speeding ticket or notice of prosecution",
             "Go to court immediately",
             "Speed up to get away from the camera"
@@ -233,10 +233,10 @@
         "question": "What should you do when parking at night on a road without street lighting?",
         "options": [
             "Use your handbrake only",
-            "Switch on your vehicle�s sidelights",
+            "Switch on your vehicle's sidelights",
             "Turn off your headlights and leave the engine running",
             "Park without any lights on"
         ],
-        "answer": "Switch on your vehicle�s sidelights"
+        "answer": "Switch on your vehicle's sidelights"
     }
 ]

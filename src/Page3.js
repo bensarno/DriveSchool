@@ -3,6 +3,8 @@ import './Account.css';
 import FullMock from './QuizPages/FullMock';
 import { db, auth } from './firebase';
 import { doc, getDoc } from 'firebase/firestore';
+import FeedbackForm from './FeedbackForm';
+
 
 const quizTitles = {
     FullMock: "Full Mock Test",
@@ -71,6 +73,13 @@ function QuizScores() {
                         ) : (
                                 <div className="scroll-container">
 
+                                    <button
+                                        onClick={() => setCurrentView('feedback')}
+                                        className="rectanglmock-button"
+                                        style={{ marginBottom: '1rem', backgroundColor: '#007bff', color: 'white' }}
+                                    >
+                                        📝 Give Feedback
+                                    </button>
 
 
 
@@ -119,6 +128,8 @@ function QuizScores() {
                 );
             case 'FullMock':
                 return <FullMock />;
+            case 'feedback':
+                return <FeedbackForm />;
             default:
                 return <div>Page Not Found</div>;
         }

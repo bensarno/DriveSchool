@@ -10,31 +10,18 @@ function EcoQ({ onQuizFeedback, onReturnToMain }) {
     const [isQuizFinished, setIsQuizFinished] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-    const [isAIResponseReceived, setIsAIResponseReceived] = useState(false);
+
+    // AI feedback states
+    const [aiFeedback, setAiFeedback] = useState("");
     const [feedbackLoading, setFeedbackLoading] = useState(false);
 
-    // Updated, stricter feedback prompt:
-    const feedbackPrompt = (chunk) => `
-You are a succinct AI tutor.
-Only provide feedback for wrong answers.
-For each wrong answer, give:
-- One short sentence (max 12 words) explaining the error.
-- One short sentence (max 12 words) offering one tip for improvement.
-Do not mention correct answers or add extra detail.
-Keep the entire response under 80 words.
-Quiz summary:
-${chunk}
-`;
-
     const getRandomQuestions = (data, num) => {
-        const shuffled = [...data].sort(() => Math.random() - 0.5);
-        return shuffled.slice(0, num);
+        return [...data].sort(() => Math.random() - 0.5).slice(0, num);
     };
 
     useEffect(() => {
         if (quizData && quizData.length > 0) {
-            const randomQuestions = getRandomQuestions(quizData, 10);
-            setQuestions(randomQuestions);
+            setQuestions(getRandomQuestions(quizData, 10));
             setLoading(false);
         } else {
             setError('No quiz data available.');
@@ -57,39 +44,13 @@ ${chunk}
             }, 0);
 
             saveScoreToFirestore("EcoQ", finalScore, questions.length);
-
-            // Assemble summary text with only wrong answers.
-            const wrongSummary = questions
-                .map((q, i) => {
-                    if (q.answer !== updatedAnswers[i]) {
-                        return `Q${i + 1}: ${q.question}\nYour Answer: ${updatedAnswers[i]}\nCorrect Answer: ${q.answer}`;
-                    }
-                    return null;
-                })
-                .filter(item => item !== null)
-                .join("\n\n");
-
-            const summaryText = `I completed the Eco Driving Quiz. My score was ${finalScore} out of ${questions.length}.\n\n` +
-                (wrongSummary ? `Mistakes:\n\n${wrongSummary}` : 'I answered all questions correctly.');
-
-            const summary = feedbackPrompt(summaryText);
-
-            // Remove immediate feedback call:
-            // if (!isAIResponseReceived && onQuizFeedback) {
-            //     onQuizFeedback(summary, { showUserMessage: false });
-            //     setIsAIResponseReceived(true);
-            // }
         }
     };
 
     const getScore = () => {
-        let score = 0;
-        questions.forEach((q, i) => {
-            if (q.answer === selectedAnswers[i]) {
-                score++;
-            }
-        });
-        return score;
+        return questions.reduce((score, q, i) => (
+            score + (q.answer === selectedAnswers[i] ? 1 : 0)
+        ), 0);
     };
 
     const renderFeedback = () => {
@@ -98,10 +59,8 @@ ${chunk}
             const correct = q.answer === userAnswer;
             return (
                 <div key={i} style={{ marginBottom: "1em" }}>
-                    <strong>Q{i + 1}: {q.question}</strong>
-                    <br />
-                    Your Answer: <span style={{ color: correct ? "green" : "red" }}>{userAnswer}</span>
-                    <br />
+                    <strong>Q{i + 1}: {q.question}</strong><br />
+                    Your answer: <span style={{ color: correct ? "green" : "red" }}>{userAnswer}</span><br />
                     {correct ? "✅ Correct" : `❌ Incorrect - Correct Answer: ${q.answer}`}
                 </div>
             );
@@ -109,28 +68,69 @@ ${chunk}
     };
 
     const handleSendFeedbackManually = async () => {
+        console.log("Feedback button clicked.");
         setFeedbackLoading(true);
+
+        // Build summary using only wrong answers, formatted for AI feedback
         const wrongSummary = questions
             .map((q, i) => {
                 if (q.answer !== selectedAnswers[i]) {
-                    return `Q${i + 1}: ${q.question}\nYour Answer: ${selectedAnswers[i]}\nCorrect Answer: ${q.answer}`;
+                    return `Question ${i + 1}:\n- Error: ${selectedAnswers[i]} is incorrect.\n- Correct Answer: ${q.answer}.`;
                 }
                 return null;
             })
-            .filter(item => item !== null)
-            .join("\n\n");
+            .filter((item) => item !== null)
+            .join("\n\n"); // Separate feedback into distinct paragraphs
 
-        const summaryText = `I completed the Eco Driving Quiz. My score was ${getScore()} out of ${questions.length}.\n\n` +
-            (wrongSummary ? `Mistakes:\n\n${wrongSummary}` : 'I answered all questions correctly.');
+        const summaryText =
+            `I completed the Eco Driving Quiz.\nMy score: ${getScore()} out of ${questions.length}.\n\n` +
+            (wrongSummary ? `Mistakes:\n\n${wrongSummary}` : "I answered all questions correctly.");
+
+        // AI feedback prompt (same as RSandMQuiz.js)
+        const feedbackPrompt = (chunk) => `
+You are a succinct AI tutor.
+Provide feedback only for incorrect answers.
+Each mistake should be separated into its own paragraph.
+
+For each incorrect answer:
+Question {questionNumber}:
+- Error: {brief explanation of the mistake, max 12 words}.
+- Correct Answer: {correct answer for the question}.
+- Tip: {short practical tip, max 12 words}.
+
+Ensure responses use proper line breaks ("\\n\\n") to separate each question properly.
+${chunk}
+`;
 
         const summary = feedbackPrompt(summaryText);
+        console.log("Summary built:", summary);
 
-        if (onQuizFeedback && !isAIResponseReceived) {
-            await onQuizFeedback(summary, { showUserMessage: false });
-            setIsAIResponseReceived(true);
+        if (!onQuizFeedback) {
+            console.error("onQuizFeedback is not defined.");
+            setAiFeedback("No AI feedback function provided.");
+            setFeedbackLoading(false);
+            return;
         }
+
+        // If all answers are correct, give simple feedback
+        if (!wrongSummary) {
+            setAiFeedback("Great job! You answered all questions correctly.");
+            setFeedbackLoading(false);
+            if (onReturnToMain) onReturnToMain();
+            return;
+        }
+
+        try {
+            const feedback = await onQuizFeedback(summary, { showUserMessage: false });
+            console.log("Received AI feedback:", feedback);
+            setAiFeedback(feedback.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>));
+        } catch (err) {
+            console.error("Error retrieving AI feedback:", err);
+            setAiFeedback("There was an error retrieving AI feedback.");
+        }
+
         setFeedbackLoading(false);
-        onReturnToMain();
+        if (onReturnToMain) onReturnToMain();
     };
 
     if (loading) return <div className="page3-container">Loading questions...</div>;
@@ -161,6 +161,12 @@ ${chunk}
                     <button className="option-btn" style={{ marginTop: "1em" }} onClick={handleSendFeedbackManually}>
                         {feedbackLoading ? "Loading Feedback..." : "Get More AI Feedback"}
                     </button>
+                    {aiFeedback && (
+                        <div className="ai-feedback" style={{ marginTop: "1em" }}>
+                            <h4>AI Feedback:</h4>
+                            {aiFeedback}
+                        </div>
+                    )}
                 </div>
             )}
         </div>

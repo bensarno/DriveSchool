@@ -60,7 +60,7 @@
         "answer": "Use cruise control to maintain a steady speed"
     },
     {
-        "question": "What should you avoid doing in order to improve your vehicle�s fuel efficiency?",
+        "question": "What should you avoid doing in order to improve your vehicle's fuel efficiency?",
         "options": [
             "Drive at a constant speed",
             "Use air conditioning sparingly",
@@ -90,12 +90,12 @@
         "answer": "It wastes fuel and increases emissions"
     },
     {
-        "question": "What is the most efficient way to use your vehicle�s air conditioning?",
+        "question": "What is the most efficient way to use your vehicles air conditioning?",
         "options": [
             "Use it when driving at high speeds to cool down the cabin quickly",
             "Keep it on constantly, even in cooler weather",
             "Turn it off when driving at low speeds and only use it when necessary",
-            "Use it only when the temperature is above 30�C"
+            "Use it only when the temperature is above 30C"
         ],
         "answer": "Turn it off when driving at low speeds and only use it when necessary"
     },
@@ -110,7 +110,7 @@
         "answer": "It increases fuel consumption"
     },
     {
-        "question": "How can reducing the use of the vehicle�s air conditioning help in eco-driving?",
+        "question": "How can reducing the use of the vehicle's air conditioning help in eco-driving?",
         "options": [
             "It reduces the amount of power taken from the engine, thus saving fuel",
             "It has no effect on fuel consumption",

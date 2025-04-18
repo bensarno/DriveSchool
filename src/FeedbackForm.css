@@ -1,0 +1,46 @@
+.feedback-form-container {
+	padding: 1rem;
+	max-height: 80vh;
+	overflow-y: auto; /* Enables scrolling */
+}
+.radio-group {
+	display: flex;
+	align-items: center; /* Align labels and buttons to the same baseline */
+	gap: 1rem;
+}
+
+.radio-label {
+	width: 30%; /* Keeps labels on the left */
+	text-align: left;
+}
+
+.radio-buttons {
+	display: flex;
+	flex-direction: column; /* Stack buttons vertically */
+	align-items: flex-start;
+	gap:5px;
+}
+
+	.radio-buttons label {
+		display: flex;
+		align-items: center; /* Ensures label text aligns with buttons */
+		gap: 0.5rem;
+	}
+
+
+/* Responsive adjustments */
+@media (max-width: 588px) {
+	.radio-group {
+		flex-direction: row; /* Stack label and radio buttons vertically */
+		align-items: flex-start;
+	}
+
+	.radio-label {
+		width: 100%; /* Full width for label */
+		margin-bottom: 10px; /* Space between label and radio buttons */
+	}
+
+	.radio-buttons {
+		width: 100%; /* Full width for radio buttons */
+	}
+}

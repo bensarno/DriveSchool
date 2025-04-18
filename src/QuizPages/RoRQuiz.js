@@ -16,17 +16,7 @@ function RoRQuiz({ onQuizFeedback, onReturnToMain }) {
     const [feedbackLoading, setFeedbackLoading] = useState(false);
 
     // This feedback prompt is designed to be succinct and instructs the AI to provide exactly two short sentences for each wrong answer.
-    const feedbackPrompt = (chunk) => `
-You are a succinct AI tutor.
-Only provide feedback for wrong answers.
-For each wrong answer, provide exactly two sentences:
-1. A sentence (max 12 words) explaining the error.
-2. A sentence (max 12 words) offering one practical tip.
-Do not mention correct answers or include extra details.
-Keep the response under 30 words. Ensure you finish your final sentence completely.
-Quiz summary:
-${chunk}
-`;
+
 
     // Function to get 10 random questions from quizData
     const getRandomQuestions = (data, num) => {
@@ -101,55 +91,50 @@ ${chunk}
         console.log("Feedback button clicked.");
         setFeedbackLoading(true);
 
-        // Build a summary of mistakes only
+        // Build summary using only wrong answers, properly formatted
         const wrongSummary = questions
             .map((q, i) => {
                 if (q.answer !== selectedAnswers[i]) {
-                    return `Q${i + 1}: ${q.question}\nYour Answer: ${selectedAnswers[i]}\nCorrect Answer: ${q.answer}`;
+                    return `Question ${i + 1}:\n- Error: ${selectedAnswers[i]} is incorrect.\n- Correct Answer: ${q.answer}.`;
                 }
                 return null;
             })
             .filter((item) => item !== null)
-            .join("\n\n");
+            .join("\n\n"); // Separate each feedback into its own paragraph
 
-        // If there are no wrong answers, set a simple feedback message and (optionally) redirect
-        const summaryText = `I completed the UK Rules of the Road Quiz. My score was ${getScore()} out of ${questions.length}.\n\n` +
+        const summaryText =
+            `I completed the UK Road Safety and Markings Quiz.\nMy score: ${getScore()} out of ${questions.length}.\n\n dont repeat the questions, just say Q1 ect.. dont tell me the answers i put. just use one sentence for each question telling me the right answer and why,respond to each question on a new line` +
             (wrongSummary ? `Mistakes:\n\n${wrongSummary}` : "I answered all questions correctly.");
 
-        const summary = feedbackPrompt(summaryText);
-        console.log("Summary built:", summary);
+        console.log("Summary built:", summaryText);
 
         if (!onQuizFeedback) {
-            console.error("onQuizFeedback is not defined. Please pass a valid feedback function as a prop.");
+            console.error("onQuizFeedback is not defined.");
             setAiFeedback("No AI feedback function provided.");
             setFeedbackLoading(false);
             return;
         }
 
-        // If there are no mistakes, give minimal feedback and optionally redirect immediately.
+        // If all answers are correct, provide basic feedback
         if (!wrongSummary) {
             setAiFeedback("Great job! You answered all questions correctly.");
             setFeedbackLoading(false);
-            if (onReturnToMain) {
-                onReturnToMain();
-            }
+            if (onReturnToMain) onReturnToMain();
             return;
         }
 
         try {
-            const feedback = await onQuizFeedback(summary, { showUserMessage: false });
+            const feedback = await onQuizFeedback(summaryText, { showUserMessage: false });
             console.log("Received AI feedback:", feedback);
-            setAiFeedback(feedback);
+            setAiFeedback(feedback.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>)); // Ensure proper formatting
         } catch (err) {
             console.error("Error retrieving AI feedback:", err);
             setAiFeedback("There was an error retrieving AI feedback.");
         }
+
         setFeedbackLoading(false);
 
-        // Optionally: Redirect the user by calling onReturnToMain if it exists.
-        if (onReturnToMain) {
-            onReturnToMain();
-        }
+        if (onReturnToMain) onReturnToMain();
     };
 
     if (loading)

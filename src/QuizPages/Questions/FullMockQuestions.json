@@ -60,7 +60,7 @@
 		"answer": "Use cruise control to maintain a steady speed"
 	},
 	{
-		"question": "What should you avoid doing in order to improve your vehicle�s fuel efficiency?",
+		"question": "What should you avoid doing in order to improve your vehicle's fuel efficiency?",
 		"options": [
 			"Drive at a constant speed",
 			"Use air conditioning sparingly",
@@ -90,12 +90,12 @@
 		"answer": "It wastes fuel and increases emissions"
 	},
 	{
-		"question": "What is the most efficient way to use your vehicle�s air conditioning?",
+		"question": "What is the most efficient way to use your vehicle's air conditioning?",
 		"options": [
 			"Use it when driving at high speeds to cool down the cabin quickly",
 			"Keep it on constantly, even in cooler weather",
 			"Turn it off when driving at low speeds and only use it when necessary",
-			"Use it only when the temperature is above 30�C"
+			"Use it only when the temperature is above 30'C"
 		],
 		"answer": "Turn it off when driving at low speeds and only use it when necessary"
 	},
@@ -110,7 +110,7 @@
 		"answer": "It increases fuel consumption"
 	},
 	{
-		"question": "How can reducing the use of the vehicle�s air conditioning help in eco-driving?",
+		"question": "How can reducing the use of the vehicle's air conditioning help in eco-driving?",
 		"options": [
 			"It reduces the amount of power taken from the engine, thus saving fuel",
 			"It has no effect on fuel consumption",
@@ -463,11 +463,11 @@
 		"question": "When driving on a dual carriageway, when can you overtake?",
 		"options": [
 			"Always, regardless of the traffic conditions",
-			"Only if it is clear and it�s safe to do so",
+			"Only if it is clear and it's safe to do so",
 			"Only when the road is clear of any traffic",
 			"You cannot overtake on a dual carriageway"
 		],
-		"answer": "Only if it is clear and it�s safe to do so"
+		"answer": "Only if it is clear and it's safe to do so"
 	},
 	{
 		"question": "When should you give way to pedestrians at a zebra crossing?",
@@ -900,12 +900,12 @@
 		"answer": "1.6mm"
 	},
 	{
-		"question": "What should you do if you�re involved in an accident, even if it's minor?",
+		"question": "What should you do if you're involved in an accident, even if it's minor?",
 		"options": [
 			"Leave the scene immediately",
 			"Exchange details with the other party and report it to the police if necessary",
 			"Only exchange details with the police",
-			"Drive off if there�s no damage"
+			"Drive off if theres no damage"
 		],
 		"answer": "Exchange details with the other party and report it to the police if necessary"
 	},
@@ -1012,12 +1012,12 @@
 	{
 		"question": "What must you do before overtaking another vehicle?",
 		"options": [
-			"Make sure it�s safe, check mirrors, and signal your intent",
+			"Make sure it's safe, check mirrors, and signal your intent",
 			"Accelerate quickly",
-			"Only signal once you�ve overtaken",
+			"Only signal once you've overtaken",
 			"Honk the horn to alert the driver"
 		],
-		"answer": "Make sure it�s safe, check mirrors, and signal your intent"
+		"answer": "Make sure it's safe, check mirrors, and signal your intent"
 	},
 	{
 		"question": "When must you stop for a school crossing patrol?",
@@ -1040,7 +1040,7 @@
 		"answer": "To fund road maintenance and other transport-related infrastructure"
 	},
 	{
-		"question": "What should you do if your vehicle�s brake lights fail while driving?",
+		"question": "What should you do if your vehicle's brake lights fail while driving?",
 		"options": [
 			"Use hand signals to indicate stopping or slowing down",
 			"Continue driving and fix it later",
@@ -1060,7 +1060,7 @@
 		"answer": "70 mph"
 	},
 	{
-		"question": "What does the �congestion charge� apply to?",
+		"question": "What does the 'congestion charge' apply to?",
 		"options": [
 			"Only petrol vehicles",
 			"Only diesel vehicles",
@@ -1102,7 +1102,7 @@
 	{
 		"question": "What should you do if you are caught by a speed camera?",
 		"options": [
-			"Ignore the notice if you believe it�s wrong",
+			"Ignore the notice if you believe it's wrong",
 			"Wait for a speeding ticket or notice of prosecution",
 			"Go to court immediately",
 			"Speed up to get away from the camera"
@@ -1123,11 +1123,11 @@
 		"question": "What should you do when parking at night on a road without street lighting?",
 		"options": [
 			"Use your handbrake only",
-			"Switch on your vehicle�s sidelights",
+			"Switch on your vehicle's sidelights",
 			"Turn off your headlights and leave the engine running",
 			"Park without any lights on"
 		],
-		"answer": "Switch on your vehicle�s sidelights"
+		"answer": "Switch on your vehicle's sidelights"
 	},
 	{
 		"question": "What should you do if your vehicle begins to skid on a slippery road?",
@@ -1170,7 +1170,7 @@
 		"answer": "1.6mm"
 	},
 	{
-		"question": "What should you do if your vehicle�s engine temperature warning light comes on?",
+		"question": "What should you do if your vehicle's engine temperature warning light comes on?",
 		"options": [
 			"Drive faster to cool it down",
 			"Pull over safely and turn off the engine to allow it to cool down",
@@ -1195,7 +1195,7 @@
 			"Only apply the handbrake if you're parking on a slope",
 			"Use the handbrake on level ground to secure the car",
 			"Use the handbrake when the car is moving slowly",
-			"Don�t use the handbrake on automatic cars"
+			"Don't use the handbrake on automatic cars"
 		],
 		"answer": "Use the handbrake on level ground to secure the car"
 	},
