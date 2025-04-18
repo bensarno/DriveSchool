@@ -22,7 +22,7 @@
     border-width: 2px;
     font-size: 20px;
     flex-direction: column; /* Arrange the rectangles vertically */ /* Allow vertical scroll */
-    gap: 30%; /* Space between rectangles */
+    gap: 5%; /* Space between rectangles */
     padding-bottom: 10%; /* Optional padding for scroll */
     max-height: 80vh; /* Optional: restrict container height */
     align-items: center;

@@ -3,6 +3,12 @@
 	max-height: 80vh;
 	overflow-y: auto; /* Enables scrolling */
 }
+.Thankyou{
+	align-self: center;
+	vertical-align: central;
+	margin-top: 30px;
+	text-align: center;
+}
 .radio-group {
 	display: flex;
 	align-items: center; /* Align labels and buttons to the same baseline */

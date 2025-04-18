@@ -36,7 +36,7 @@ function FeedbackForm() {
     };
 
     if (submitted) {
-        return <div>Thanks for your feedback!</div>;
+        return <div className = "Thankyou">Thanks for your feedback! Press Home to return.</div>;
     }
 
     return (
