@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Account.css';
 import FullMock from './QuizPages/FullMock';
 import { db, auth } from './firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, deleteDoc } from 'firebase/firestore';
 import FeedbackForm from './FeedbackForm';
-
 
 const quizTitles = {
     FullMock: "Full Mock Test",
@@ -53,6 +52,32 @@ function QuizScores() {
         setCurrentView('FullMock');
     };
 
+    const handleDeleteAccount = async () => {
+        const confirmed = window.confirm("Are you sure you want to delete your account? This cannot be undone.");
+        if (!confirmed) return;
+
+        const user = auth.currentUser;
+
+        try {
+            // Delete user data from Firestore
+            const userDocRef = doc(db, "quizScores", user.uid);
+            await deleteDoc(userDocRef);
+
+            // Delete Firebase Auth user
+            await user.delete();
+
+            alert("Account deleted successfully.");
+            window.location.reload();
+        } catch (error) {
+            console.error("Error deleting account:", error);
+            if (error.code === 'auth/requires-recent-login') {
+                alert("Please sign in again before deleting your account.");
+            } else {
+                alert("Failed to delete account. Please try again.");
+            }
+        }
+    };
+
     const renderContent = () => {
         switch (currentView) {
             case 'home':
@@ -71,18 +96,14 @@ function QuizScores() {
                         {loading ? (
                             <div>Loading scores...</div>
                         ) : (
-                                <div className="scroll-container">
-
-                                    <button
-                                        onClick={() => setCurrentView('feedback')}
-                                        className="rectanglmock-button"
-                                        style={{ marginBottom: '1rem', backgroundColor: '#007bff', color: 'white' }}
-                                    >
-                                        📝 Give Feedback
-                                    </button>
-
-
-
+                            <div className="scroll-container">
+                                <button
+                                    onClick={() => setCurrentView('feedback')}
+                                    className="rectanglmock-button"
+                                    style={{ marginBottom: '1rem', backgroundColor: '#007bff', color: 'white' }}
+                                >
+                                    📝 Give Feedback
+                                </button>
 
                                 {Object.keys(quizTitles).map((key) => {
                                     const quizData = scores[key];
@@ -98,13 +119,12 @@ function QuizScores() {
                                     );
                                 })}
 
-                                {/* 🚪 Sign Out Button inside scrollable container */}
                                 <div style={{ textAlign: 'center', marginTop: '1rem' }}>
                                     <button
                                         onClick={async () => {
                                             try {
                                                 await auth.signOut();
-                                                window.location.reload(); // Reset app after sign-out
+                                                window.location.reload();
                                             } catch (err) {
                                                 console.error("Error signing out:", err);
                                             }
@@ -120,6 +140,23 @@ function QuizScores() {
                                         }}
                                     >
                                         🚪 Sign Out
+                                    </button>
+                                </div>
+
+                                <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+                                    <button
+                                        onClick={handleDeleteAccount}
+                                        className="rectanglmock-button"
+                                        style={{
+                                            backgroundColor: '#6c757d',
+                                            color: 'white',
+                                            padding: '0.5rem 1rem',
+                                            border: 'none',
+                                            borderRadius: '8px',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        ❌ Delete Account
                                     </button>
                                 </div>
                             </div>
