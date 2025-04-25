@@ -1,7 +1,7 @@
 .feedback-form-container {
 	padding: 1rem;
 	max-height: 80vh;
-	overflow-y: auto; /* Enables scrolling */
+	overflow-y: auto; /* Enable scrolling */
 }
 .Thankyou{
 	align-self: center;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import quizData from './Questions/FullMockQuestions.json'; // Import the JSON file
+import quizData from './Questions/FullMockQuestions.json'; 
 import { saveScoreToFirestore } from '../utils/saveScore';
 
-import '../Page3.css'; // Your custom styles
+import '../Page3.css'; 
 
 function FullMock() {
     const [questions, setQuestions] = useState([]); // Holds the quiz data
@@ -28,7 +28,7 @@ function FullMock() {
             setError('No quiz data available.');
             setLoading(false); // Set loading state to false if no data is available
         }
-    }, []); // Empty dependency array ensures this runs only once when the component mounts
+    }, []); 
 
     
 
@@ -81,7 +81,7 @@ function FullMock() {
     if (loading) return <div className="page3-container">Loading questions...</div>; // Show loading state while fetching data
     if (error) return <div className="page3-container error">{error}</div>; // Handle errors
 
-    // Ensure we have questions and they are loaded properly
+    // Ensure there are questions and they are loaded properly
     if (questions.length === 0) {
         return <div className="page3-container">No questions available.</div>;
     }

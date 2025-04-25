@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import quizData from './Questions/RSandMQuizQuestions.json'; // Import quiz JSON
-import '../Page3.css'; // Custom styles
+import quizData from './Questions/RSandMQuizQuestions.json'; 
+import '../Page3.css'; 
 import { saveScoreToFirestore } from '../utils/saveScore';
 
 function RSandMQuiz({ onQuizFeedback, onReturnToMain }) {
@@ -15,7 +15,7 @@ function RSandMQuiz({ onQuizFeedback, onReturnToMain }) {
     const [aiFeedback, setAiFeedback] = useState("");
     const [feedbackLoading, setFeedbackLoading] = useState(false);
 
-    // Function to get 10 random questions from quizData
+    // get 10 random questions from quizData
     const getRandomQuestions = (data, num) => {
         return [...data].sort(() => Math.random() - 0.5).slice(0, num);
     };
@@ -76,7 +76,7 @@ function RSandMQuiz({ onQuizFeedback, onReturnToMain }) {
         console.log("Feedback button clicked.");
         setFeedbackLoading(true);
 
-        // Build summary using only wrong answers, properly formatted
+        // Build summary using only wrong answers
         const wrongSummary = questions
             .map((q, i) => {
                 if (q.answer !== selectedAnswers[i]) {
@@ -111,7 +111,7 @@ function RSandMQuiz({ onQuizFeedback, onReturnToMain }) {
         try {
             const feedback = await onQuizFeedback(summaryText, { showUserMessage: false });
             console.log("Received AI feedback:", feedback);
-            setAiFeedback(feedback.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>)); // Ensure proper formatting
+            setAiFeedback(feedback.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>)); 
         } catch (err) {
             console.error("Error retrieving AI feedback:", err);
             setAiFeedback("There was an error retrieving AI feedback.");

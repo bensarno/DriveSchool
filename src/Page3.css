@@ -11,7 +11,7 @@
     background-color: #368364;
 }
 .feedback-scroll {
-    max-height: 300px; /* Adjust as needed */
+    max-height: 300px; 
     overflow-y: auto;
     border: 3px solid;
     border-color: #31634f;

@@ -86,7 +86,7 @@ function EcoQ({ onQuizFeedback, onReturnToMain }) {
             `I completed the Eco Driving Quiz.\nMy score: ${getScore()} out of ${questions.length}.\n\n` +
             (wrongSummary ? `Mistakes:\n\n${wrongSummary}` : "I answered all questions correctly.");
 
-        // AI feedback prompt (same as RSandMQuiz.js)
+        // AI feedback prompt
         const feedbackPrompt = (chunk) => `
 You are a succinct AI tutor.
 Provide feedback only for incorrect answers.

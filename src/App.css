@@ -1,6 +1,6 @@
-/* Full-width header */
+
 .header {
-    width: 100%; /* Full width of the viewport */
+    width: 100%; 
     background-color: #368364;
     display: flex;
     justify-content: space-between; /* Evenly space out the circles */
@@ -23,8 +23,8 @@
     font-size: 20px;
     flex-direction: column; /* Arrange the rectangles vertically */ /* Allow vertical scroll */
     gap: 5%; /* Space between rectangles */
-    padding-bottom: 10%; /* Optional padding for scroll */
-    max-height: 80vh; /* Optional: restrict container height */
+    padding-bottom: 10%; 
+    max-height: 80vh; 
     align-items: center;
     background-color: #368364;
     border-color: #31634f;
@@ -120,7 +120,7 @@
     background-color: #FFFDD0;
     color: black;
     margin-top: 60px; /* Add space to prevent overlap with the fixed header */
-    overflow: hidden; /* Prevents extra scrolling */
+    overflow: hidden; /* Prevent extra scrolling */
     height: calc(100vh - 60px); /* Adjust height to take the full screen minus the header */
 }
 
@@ -135,11 +135,11 @@
     flex-direction: column;
     gap: 15px;
     width: 100%; /* Ensure chat area fills the available width */
-    max-height: calc(100vh - 140px); /* Prevent overflow (subtract header + input area height) */
+    max-height: calc(100vh - 140px); /* Prevent overflow */
     box-sizing: border-box; /* Ensures padding is within width */
 }
 
-/* Input Area */
+
 .input-area {
     background-color: #368364;
     border-style: solid;
@@ -151,12 +151,12 @@
     justify-content: flex-start; /* Align to the left */
     width: 100%; /* Ensure input area fills the width */
     position: relative;
-    box-sizing: border-box; /* Prevents overflow */
+    box-sizing: border-box; /* Prevent overflow */
 }
 
-/* Input field */
+
 input {
-    flex-grow: 1; /* Let the input field grow to fill available space */
+    flex-grow: 1; /*fill available space */
     padding: 12px;
     border-radius: 20px;
     border: none;
@@ -165,12 +165,12 @@ input {
     width: 80%;
     color: black;
     font-size: 16px;
-    text-align: left; /* Text starts from the left */
-    margin-right: 60px; /* Give enough space for the send button */
+    text-align: left; 
+    margin-right: 60px; 
     margin-left: 10px;
 }
 
-/* Send Button */
+
 .send-button {
     width: 40px;
     height: 40px;
@@ -209,8 +209,7 @@ input {
 
         /* Input field on mobile */
         .input-area input {
-            width: 80%; /* Take full width minus space for the send button */
-             /* Remove margin-right on mobile */
+            width: 80%; 
         }
 
     .send-button {

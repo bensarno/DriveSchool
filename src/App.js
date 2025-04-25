@@ -4,12 +4,8 @@ import axios from "axios";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
-
-// Import components
 import Page1 from "./Page1";
 import Page3 from "./Page3";
-
-// Import the audio files
 import pop2 from "./SoundEffects/pop2.mp3";
 import pop3 from "./SoundEffects/pop3.mp3";
 

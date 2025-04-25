@@ -88,7 +88,7 @@ function QuizScores() {
                             className="rectanglmock-button"
                             style={{ marginBottom: '1rem' }}
                         >
-                            🚗 Take Full Mock Test (50 Questions)
+                            Take Full Mock Test (50 Questions)
                         </button>
 
                         <h1 className="page1-header">Your Last Scores</h1>
@@ -102,7 +102,7 @@ function QuizScores() {
                                     className="rectanglmock-button"
                                     style={{ marginBottom: '1rem', backgroundColor: '#007bff', color: 'white' }}
                                 >
-                                    📝 Give Feedback
+                                     Give Feedback
                                 </button>
 
                                 {Object.keys(quizTitles).map((key) => {
@@ -139,7 +139,7 @@ function QuizScores() {
                                             cursor: 'pointer'
                                         }}
                                     >
-                                        🚪 Sign Out
+                                        Sign Out
                                     </button>
                                 </div>
 

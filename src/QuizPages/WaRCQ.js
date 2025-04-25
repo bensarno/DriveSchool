@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import quizData from './Questions/WaRCQQuestions.json'; // Import the JSON file
-import '../Page3.css'; // Your custom styles
-import { db, auth } from '../firebase'; // Firestore and Firebase Auth
+import quizData from './Questions/WaRCQQuestions.json'; 
+import '../Page3.css'; 
+import { db, auth } from '../firebase'; 
 import { doc, setDoc } from 'firebase/firestore';
 
 function WaRCQ({ onQuizFeedback, onReturnToMain }) {
@@ -99,7 +99,7 @@ function WaRCQ({ onQuizFeedback, onReturnToMain }) {
         console.log("Feedback button clicked.");
         setFeedbackLoading(true);
 
-        // Build summary using only wrong answers, properly formatted
+        // Build summary using only wrong answers
         const wrongSummary = questions
             .map((q, i) => {
                 if (q.answer !== selectedAnswers[i]) {
@@ -134,7 +134,7 @@ function WaRCQ({ onQuizFeedback, onReturnToMain }) {
         try {
             const feedback = await onQuizFeedback(summaryText, { showUserMessage: false });
             console.log("Received AI feedback:", feedback);
-            setAiFeedback(feedback.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>)); // Ensure proper formatting
+            setAiFeedback(feedback.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>)); 
         } catch (err) {
             console.error("Error retrieving AI feedback:", err);
             setAiFeedback("There was an error retrieving AI feedback.");

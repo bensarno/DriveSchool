@@ -1,5 +1,5 @@
 import { doc, setDoc } from 'firebase/firestore';
-import { db } from '../firebase'; // adjust path if needed
+import { db } from '../firebase'; 
 
 export const saveScoreToFirestore = async (user, quizName, score, total) => {
     if (!user) {
