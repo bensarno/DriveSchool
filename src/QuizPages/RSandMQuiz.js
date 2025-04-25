@@ -88,7 +88,7 @@ function RSandMQuiz({ onQuizFeedback, onReturnToMain }) {
             .join("\n\n"); // Separate each feedback into its own paragraph
 
         const summaryText =
-            `I completed the UK Road Safety and Markings Quiz.\nMy score: ${getScore()} out of ${questions.length}.\n\n give me a breif description of where i went wrong, only use one sentence for each question. do not elaborate further or give any other bonus tips.` +
+            `I completed the UK Road Signs and Markings Quiz.\nMy score: ${getScore()} out of ${questions.length}.\n\n give me a breif description of where i went wrong, only use one sentence for each question. do not elaborate further or give any other bonus tips.` +
             (wrongSummary ? `Mistakes:\n\n${wrongSummary}` : "I answered all questions correctly.");
 
         console.log("Summary built:", summaryText);
@@ -128,7 +128,7 @@ function RSandMQuiz({ onQuizFeedback, onReturnToMain }) {
 
     return (
         <div className="page3-container">
-            <h1 className="page3-header">UK Road Safety and Markings Quiz</h1>
+            <h1 className="page3-header">UK Road Signs and Markings Quiz</h1>
             {!isQuizFinished ? (
                 <div className="quiz-question">
                     <h2>Question {currentQuestionIndex + 1} of {questions.length}</h2>
